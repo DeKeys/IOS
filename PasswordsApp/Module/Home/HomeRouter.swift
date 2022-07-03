@@ -1,0 +1,44 @@
+//
+//  HomeRouter.swift
+//  PasswordsApp
+//
+//  Created by Roman Rakhlin on 7/3/22.
+//
+
+import UIKit
+
+class HomeRouter {
+
+    weak var viewController: UIViewController?
+
+    static func createModule() -> UIViewController {
+        let view = HomeViewController(nibName: nil, bundle: nil)
+        let interactor = HomeInteractor()
+        let router = HomeRouter()
+        let presenter = HomePresenter(interface: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+
+        return view
+    }
+}
+
+// MARK: - HomeRouterProtocol
+extension HomeRouter: HomeRouterProtocol {
+    
+    // Show ProfileViewController
+    func showProfile() {
+//        let postVC = PostRouter.createModule()
+//        viewController?.navigationController?.pushViewController(postVC, animated: true)
+        print("Show ProfileViewController")
+    }
+    
+    // Show NewPasswordViewController
+    func showNewPassword() {
+//        let postVC = PostRouter.createModule()
+//        viewController?.navigationController?.pushViewController(postVC, animated: true)
+        print("Show NewPasswordViewController")
+    }
+}

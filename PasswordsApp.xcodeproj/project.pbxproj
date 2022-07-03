@@ -9,21 +9,61 @@
 /* Begin PBXBuildFile section */
 		829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488EB286FB4CF0036DBFD /* AppDelegate.swift */; };
 		829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488ED286FB4CF0036DBFD /* SceneDelegate.swift */; };
-		829488F0286FB4CF0036DBFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488EF286FB4CF0036DBFD /* ViewController.swift */; };
-		829488F3286FB4CF0036DBFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829488F1286FB4CF0036DBFD /* Main.storyboard */; };
 		829488F5286FB4D10036DBFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829488F4286FB4D10036DBFD /* Assets.xcassets */; };
 		829488F8286FB4D10036DBFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */; };
+		829489152871EB530036DBFD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489142871EB530036DBFD /* HomePresenter.swift */; };
+		829489172871EB700036DBFD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489162871EB700036DBFD /* HomeRouter.swift */; };
+		829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489182871EB7F0036DBFD /* HomeProtocols.swift */; };
+		8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294891A2871EBDA0036DBFD /* HomeViewController.swift */; };
+		8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294891D2871EBFE0036DBFD /* PasswordCell.swift */; };
+		829489202871EC280036DBFD /* PasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8294891F2871EC280036DBFD /* PasswordCell.xib */; };
+		829489222871ED140036DBFD /* PasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489212871ED140036DBFD /* PasswordEntity.swift */; };
+		829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489232871FCB10036DBFD /* HomeInteractor.swift */; };
+		829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489252871FDCC0036DBFD /* UIAlertController+Extension.swift */; };
+		829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489272871FDDF0036DBFD /* UIViewController+Extension.swift */; };
+		8294892A2871FDF20036DBFD /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489292871FDF20036DBFD /* UIImageView+Extension.swift */; };
+		8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294892B2871FE240036DBFD /* UICollectionView+Extension.swift */; };
+		8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294892D2871FE3A0036DBFD /* ReusableView.swift */; };
+		829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294892F2871FE4C0036DBFD /* NibLoadableView.swift */; };
+		829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489322871FE830036DBFD /* LoadingViewPresenter.swift */; };
+		829489352871FE930036DBFD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489342871FE930036DBFD /* LoadingView.swift */; };
+		82948937287201510036DBFD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948936287201510036DBFD /* UIColor+Extension.swift */; };
+		8294893A287201900036DBFD /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82948939287201900036DBFD /* Color.xcassets */; };
+		8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893B287207B00036DBFD /* UIView+Extension.swift */; };
+		8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* PasswordsWorker.swift */; };
+		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.release.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.release.xcconfig"; sourceTree = "<group>"; };
 		829488E8286FB4CF0036DBFD /* PasswordsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		829488EB286FB4CF0036DBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829488ED286FB4CF0036DBFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		829488EF286FB4CF0036DBFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		829488F2286FB4CF0036DBFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		829488F4286FB4D10036DBFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		829488F7286FB4D10036DBFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		829488F9286FB4D10036DBFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		829489142871EB530036DBFD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		829489162871EB700036DBFD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		829489182871EB7F0036DBFD /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		8294891A2871EBDA0036DBFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8294891D2871EBFE0036DBFD /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
+		8294891F2871EC280036DBFD /* PasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordCell.xib; sourceTree = "<group>"; };
+		829489212871ED140036DBFD /* PasswordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordEntity.swift; sourceTree = "<group>"; };
+		829489232871FCB10036DBFD /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		829489252871FDCC0036DBFD /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		829489272871FDDF0036DBFD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		829489292871FDF20036DBFD /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		8294892B2871FE240036DBFD /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		8294892D2871FE3A0036DBFD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		8294892F2871FE4C0036DBFD /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		829489322871FE830036DBFD /* LoadingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewPresenter.swift; sourceTree = "<group>"; };
+		829489342871FE930036DBFD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		82948936287201510036DBFD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		82948939287201900036DBFD /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		8294893B287207B00036DBFD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8294893D287210960036DBFD /* PasswordsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsWorker.swift; sourceTree = "<group>"; };
+		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +83,8 @@
 			children = (
 				829488EA286FB4CF0036DBFD /* PasswordsApp */,
 				829488E9286FB4CF0036DBFD /* Products */,
+				AF05518E4C0196C80F02208D /* Pods */,
+				85D605F9B56F18C97127E5D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +101,120 @@
 			children = (
 				829488EB286FB4CF0036DBFD /* AppDelegate.swift */,
 				829488ED286FB4CF0036DBFD /* SceneDelegate.swift */,
-				829488EF286FB4CF0036DBFD /* ViewController.swift */,
-				829488F1286FB4CF0036DBFD /* Main.storyboard */,
-				829488F4286FB4D10036DBFD /* Assets.xcassets */,
-				829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */,
+				829489072870ADA30036DBFD /* Common */,
+				8294890B2870ADDF0036DBFD /* Module */,
+				82948938287201630036DBFD /* Resource */,
 				829488F9286FB4D10036DBFD /* Info.plist */,
 			);
 			path = PasswordsApp;
+			sourceTree = "<group>";
+		};
+		829489072870ADA30036DBFD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				829489082870ADB50036DBFD /* Extension */,
+				829489092870ADBB0036DBFD /* UI */,
+				8294890A2870ADC30036DBFD /* Worker */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		829489082870ADB50036DBFD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				829489252871FDCC0036DBFD /* UIAlertController+Extension.swift */,
+				829489272871FDDF0036DBFD /* UIViewController+Extension.swift */,
+				829489292871FDF20036DBFD /* UIImageView+Extension.swift */,
+				8294892B2871FE240036DBFD /* UICollectionView+Extension.swift */,
+				82948936287201510036DBFD /* UIColor+Extension.swift */,
+				8294893B287207B00036DBFD /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		829489092870ADBB0036DBFD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8294892D2871FE3A0036DBFD /* ReusableView.swift */,
+				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
+				829489312871FE5D0036DBFD /* Loading */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8294890A2870ADC30036DBFD /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				8294893D287210960036DBFD /* PasswordsWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		8294890B2870ADDF0036DBFD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				8294890C2870AEAC0036DBFD /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		8294890C2870AEAC0036DBFD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8294891C2871EBE80036DBFD /* PasswordCell */,
+				829489182871EB7F0036DBFD /* HomeProtocols.swift */,
+				829489162871EB700036DBFD /* HomeRouter.swift */,
+				829489142871EB530036DBFD /* HomePresenter.swift */,
+				829489232871FCB10036DBFD /* HomeInteractor.swift */,
+				829489212871ED140036DBFD /* PasswordEntity.swift */,
+				8294891A2871EBDA0036DBFD /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8294891C2871EBE80036DBFD /* PasswordCell */ = {
+			isa = PBXGroup;
+			children = (
+				8294891D2871EBFE0036DBFD /* PasswordCell.swift */,
+				8294891F2871EC280036DBFD /* PasswordCell.xib */,
+			);
+			path = PasswordCell;
+			sourceTree = "<group>";
+		};
+		829489312871FE5D0036DBFD /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				829489322871FE830036DBFD /* LoadingViewPresenter.swift */,
+				829489342871FE930036DBFD /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		82948938287201630036DBFD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */,
+				829488F4286FB4D10036DBFD /* Assets.xcassets */,
+				82948939287201900036DBFD /* Color.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		85D605F9B56F18C97127E5D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF05518E4C0196C80F02208D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */,
+				1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 829488FC286FB4D10036DBFD /* Build configuration list for PBXNativeTarget "PasswordsApp" */;
 			buildPhases = (
+				6247EC06CAF99A4EAF40F80B /* [CP] Check Pods Manifest.lock */,
 				829488E4286FB4CF0036DBFD /* Sources */,
 				829488E5286FB4CF0036DBFD /* Frameworks */,
 				829488E6286FB4CF0036DBFD /* Resources */,
+				82948900286FBF2F0036DBFD /* SwiftLint */,
+				943A99769A4083C58D76F8BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,35 +279,105 @@
 			buildActionMask = 2147483647;
 			files = (
 				829488F8286FB4D10036DBFD /* LaunchScreen.storyboard in Resources */,
+				8294893A287201900036DBFD /* Color.xcassets in Resources */,
 				829488F5286FB4D10036DBFD /* Assets.xcassets in Resources */,
-				829488F3286FB4CF0036DBFD /* Main.storyboard in Resources */,
+				829489202871EC280036DBFD /* PasswordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6247EC06CAF99A4EAF40F80B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PasswordsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82948900286FBF2F0036DBFD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		943A99769A4083C58D76F8BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		829488E4286FB4CF0036DBFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				829488F0286FB4CF0036DBFD /* ViewController.swift in Sources */,
+				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
+				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
+				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
+				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
+				8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */,
+				829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */,
+				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
+				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
+				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,
+				829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */,
+				829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
+				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
+				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
+				8294892A2871FDF20036DBFD /* UIImageView+Extension.swift in Sources */,
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
+				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
+				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
+				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
+				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		829488F1286FB4CF0036DBFD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				829488F2286FB4CF0036DBFD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +505,7 @@
 		};
 		829488FD286FB4D10036DBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +516,6 @@
 				INFOPLIST_FILE = PasswordsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,12 +527,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		829488FE286FB4D10036DBFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +544,6 @@
 				INFOPLIST_FILE = PasswordsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +555,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
