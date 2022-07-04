@@ -3,19 +3,6 @@
 *.swp
 *.lock
 *~.nib
-DerivedData/
-build/
-*.pbxuser
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-!default.pbxuser
-!default.mode1v3
-!default.mode2v3
-!default.perspectivev3
-*.xccheckout
-xcuserdata/
-*.moved-aside
 !Podfile.lock
 xcuserdata/
 *.xcscmblueprint
@@ -36,6 +23,7 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 timeline.xctimeline
+Pods/
 playground.xcworkspace
 .build/
 Carthage/Build/
