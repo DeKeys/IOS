@@ -43,7 +43,6 @@ extension HomeViewController {
         // setup natigation bar
         self.title = "Passwords"
         
-        
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
         let createButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(createButtonTapped))
 
