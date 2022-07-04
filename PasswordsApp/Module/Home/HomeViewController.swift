@@ -9,18 +9,19 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController {
-
+    
     var presenter: HomePresenterProtocol?
     var passwords: Passwords = [] {
         didSet {
             collectionView.reloadData()
         }
     }
-    
+
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         makeLayout()
     }
 }
@@ -52,6 +53,7 @@ extension HomeViewController {
         // setup collection view
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.registerHeader(SearchCell.self)
         collectionView.register(PasswordCell.self)
         collectionView.backgroundColor = .viewBackground
         collectionView.showsVerticalScrollIndicator = false
@@ -109,6 +111,12 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.setCell(password: self.passwords[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let searchCell: SearchCell = collectionView.dequeueReusableCell(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath)
+        searchCell.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40)
+        return searchCell
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -133,5 +141,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 100) //add your height here
     }
 }
