@@ -32,3 +32,17 @@ extension UIColor {
         return lum < 0.50 ? true : false
     }
 }
+
+// MARK: - Random Color Generation
+extension UIColor {
+    
+    // TODO: - Make Gradient Color
+    static var random: UIColor {
+        return UIColor(
+            red: .random(in: 0...1),
+            green: .random(in: 0...1),
+            blue: .random(in: 0...1),
+            alpha: 1.0
+        )
+    }
+}

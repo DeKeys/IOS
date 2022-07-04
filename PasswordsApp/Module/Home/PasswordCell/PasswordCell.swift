@@ -11,46 +11,74 @@ import SnapKit
 class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
 
     var password: Password!
-    
-    let titleLabel = UILabel()
-    let bodyLabel = UILabel()
+
+    let serviceImage = ServiceView()
+    let serviceLabel = UILabel()
+    let loginLabel = UILabel()
+    let interactButton = UIButton()
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.makeLayout()
     }
     
     func setCell(password: Password) {
         self.password = password
         
-        titleLabel.text = password.serviceName
-        bodyLabel.text = password.login
+        serviceImage.centeredLetter = String(password.serviceName.first!)
+        serviceLabel.text = password.serviceName
+        loginLabel.text = password.login
     }
-    
+
     fileprivate func makeLayout() {
         self.layer.cornerRadius = 12
-        self.backgroundColor = UIColor.red
-
-        titleLabel.font = .systemFont(ofSize: 13)
-        titleLabel.textColor = backgroundColor!.isDarkColor ? .white : .black
-        titleLabel.numberOfLines = 0
-        titleLabel.lineBreakMode = .byWordWrapping
+    
+        // style labels
+        let systemFont = UIFont.systemFont(ofSize: CGFloat(18), weight: .medium)
+        if let descriptor = UIFont.systemFont(ofSize: CGFloat(18), weight: .medium).fontDescriptor.withDesign(.rounded) {
+            let roundedFont = UIFont(descriptor: descriptor, size: CGFloat(18))
+            serviceLabel.font = roundedFont
+            loginLabel.font = roundedFont
+        } else {
+            serviceLabel.font = systemFont
+            loginLabel.font = systemFont
+        }
         
-        bodyLabel.font = .systemFont(ofSize: 13)
-        bodyLabel.textColor = backgroundColor!.isDarkColor ? .white : .black
-        bodyLabel.numberOfLines = 0
-        bodyLabel.lineBreakMode = .byWordWrapping
+        // style button
+        interactButton.setTitle("See", for: .normal)
+        interactButton.setTitleColor(.black, for: .normal)
+        interactButton.layer.borderWidth = 0.8
+        interactButton.layer.borderColor = UIColor.black.cgColor
+        interactButton.layer.cornerRadius = 12
         
-        // MARK: - StackView
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, bodyLabel])
-        stackView.distribution = .fillEqually
-        stackView.axis = .vertical
-        stackView.spacing = 10
+        // cretae stack for labes
+        let labelStackView = UIStackView(arrangedSubviews: [serviceLabel, loginLabel])
+        labelStackView.distribution = .fillEqually
+        labelStackView.axis = .vertical
+        labelStackView.spacing = 4
         
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.centerX.centerY.equalToSuperview()
-            make.edges.equalToSuperview().inset(10)
+        // place all elemetns on the view
+        self.addSubview(serviceImage)
+        self.addSubview(labelStackView)
+        self.addSubview(interactButton)
+        
+        // add some constraints
+        serviceImage.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
+            make.width.height.equalTo(self.frame.height - 2)
+            make.left.equalTo(10)
+        }
+        
+        labelStackView.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
+            make.left.equalTo(serviceImage.snp.right).offset(20)
+        }
+        
+        interactButton.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
+            make.width.equalTo(60)
+            make.right.equalTo(-10)
         }
     }
 }
