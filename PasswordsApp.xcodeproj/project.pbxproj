@@ -31,6 +31,7 @@
 		8294893A287201900036DBFD /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82948939287201900036DBFD /* Color.xcassets */; };
 		8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893B287207B00036DBFD /* UIView+Extension.swift */; };
 		8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* PasswordsWorker.swift */; };
+		82948942287370C30036DBFD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948941287370C30036DBFD /* ServiceView.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		82948939287201900036DBFD /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		8294893B287207B00036DBFD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8294893D287210960036DBFD /* PasswordsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsWorker.swift; sourceTree = "<group>"; };
+		82948941287370C30036DBFD /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				8294892D2871FE3A0036DBFD /* ReusableView.swift */,
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
 				829489312871FE5D0036DBFD /* Loading */,
+				82948941287370C30036DBFD /* ServiceView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
 				8294892A2871FDF20036DBFD /* UIImageView+Extension.swift in Sources */,
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
+				82948942287370C30036DBFD /* ServiceView.swift in Sources */,
 				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
