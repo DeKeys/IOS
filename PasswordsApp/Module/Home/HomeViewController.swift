@@ -9,19 +9,25 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController {
-
+    
     var presenter: HomePresenterProtocol?
     var passwords: Passwords = [] {
         didSet {
             collectionView.reloadData()
         }
     }
+    var filteredPassowrds: Passwords = []
     
+    let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         makeLayout()
+        
+        self.presenter?.getPasswords()
+        filteredPassowrds = passwords
     }
 }
 
@@ -29,18 +35,15 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     fileprivate func makeLayout() {
-        self.createComponents()
+        self.view.backgroundColor = .viewBackground
         self.showLoadingDialog()
         
-        self.presenter?.getPasswords()
+        setupNavigation()
+        setupCollectionView()
+        setupConstraints()
     }
     
-    fileprivate func createComponents() {
-        
-        // set backround
-        self.view.backgroundColor = .viewBackground
-
-        // setup natigation bar
+    fileprivate func setupNavigation() {
         self.title = "Passwords"
         
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
@@ -49,18 +52,29 @@ extension HomeViewController {
         self.navigationItem.leftBarButtonItem = profileButton
         self.navigationItem.rightBarButtonItem = createButton
         
-        // setup collection view
+        setupSearchBar()
+    }
+    
+    fileprivate func setupSearchBar() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.definesPresentationContext = true
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    fileprivate func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PasswordCell.self)
         collectionView.backgroundColor = .viewBackground
         collectionView.showsVerticalScrollIndicator = false
         
-        // add components and constraints
         self.view.addSubview(collectionView)
-        
-        collectionView.snp.makeConstraints { [weak self] make in
-            guard let self = self else { return }
+    }
+    
+    fileprivate func setupConstraints() {
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.trailing.bottom.equalToSuperview()
         }
@@ -101,12 +115,12 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return passwords.count
+        return filteredPassowrds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.setCell(password: self.passwords[indexPath.row])
+        cell.setCell(password: self.filteredPassowrds[indexPath.row])
         return cell
     }
 }
@@ -133,5 +147,27 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let currentFilter = searchController.searchBar.text {
+            if currentFilter != "" {
+                var tempPasswords: Passwords = []
+                
+                for password in self.passwords {
+                    if password.serviceName.contains(currentFilter) {
+                        tempPasswords.append(password)
+                    }
+                }
+                
+                self.filteredPassowrds = tempPasswords
+            } else {
+                self.filteredPassowrds = self.passwords
+            }
+        }
+        
+        self.collectionView.reloadData()
     }
 }
