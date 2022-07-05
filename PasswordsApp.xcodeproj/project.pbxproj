@@ -32,8 +32,6 @@
 		8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893B287207B00036DBFD /* UIView+Extension.swift */; };
 		8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* PasswordsWorker.swift */; };
 		82948942287370C30036DBFD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948941287370C30036DBFD /* ServiceView.swift */; };
-		8294894528738B990036DBFD /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894428738B990036DBFD /* SearchCell.swift */; };
-		8294894828738BB00036DBFD /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8294894728738BB00036DBFD /* SearchCell.xib */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +64,6 @@
 		8294893B287207B00036DBFD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8294893D287210960036DBFD /* PasswordsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsWorker.swift; sourceTree = "<group>"; };
 		82948941287370C30036DBFD /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
-		8294894428738B990036DBFD /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
-		8294894728738BB00036DBFD /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,7 +164,6 @@
 		8294890C2870AEAC0036DBFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8294894328738B8C0036DBFD /* SearchCell */,
 				8294891C2871EBE80036DBFD /* PasswordCell */,
 				829489182871EB7F0036DBFD /* HomeProtocols.swift */,
 				829489162871EB700036DBFD /* HomeRouter.swift */,
@@ -206,15 +201,6 @@
 				82948939287201900036DBFD /* Color.xcassets */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		8294894328738B8C0036DBFD /* SearchCell */ = {
-			isa = PBXGroup;
-			children = (
-				8294894428738B990036DBFD /* SearchCell.swift */,
-				8294894728738BB00036DBFD /* SearchCell.xib */,
-			);
-			path = SearchCell;
 			sourceTree = "<group>";
 		};
 		85D605F9B56F18C97127E5D2 /* Frameworks */ = {
@@ -296,7 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				829488F8286FB4D10036DBFD /* LaunchScreen.storyboard in Resources */,
-				8294894828738BB00036DBFD /* SearchCell.xib in Resources */,
 				8294893A287201900036DBFD /* Color.xcassets in Resources */,
 				829488F5286FB4D10036DBFD /* Assets.xcassets in Resources */,
 				829489202871EC280036DBFD /* PasswordCell.xib in Resources */,
@@ -371,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
-				8294894528738B990036DBFD /* SearchCell.swift in Sources */,
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
