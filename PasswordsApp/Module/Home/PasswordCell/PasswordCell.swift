@@ -15,7 +15,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
     let serviceImage = ServiceView()
     let serviceLabel = UILabel()
     let loginLabel = UILabel()
-    let interactButton = UIButton()
+    let interactionImage = UIImageView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,12 +45,8 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
             loginLabel.font = systemFont
         }
         
-        // style button
-        interactButton.setTitle("See", for: .normal)
-        interactButton.setTitleColor(.black, for: .normal)
-        interactButton.layer.borderWidth = 0.8
-        interactButton.layer.borderColor = UIColor.black.cgColor
-        interactButton.layer.cornerRadius = 12
+        // style image
+        interactionImage.image = UIImage(named: "3d_touch_button")
         
         // cretae stack for labes
         let labelStackView = UIStackView(arrangedSubviews: [serviceLabel, loginLabel])
@@ -61,7 +57,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         // place all elemetns on the view
         self.addSubview(serviceImage)
         self.addSubview(labelStackView)
-        self.addSubview(interactButton)
+        self.addSubview(interactionImage)
         
         // add some constraints
         serviceImage.snp.makeConstraints { make in
@@ -75,9 +71,9 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
             make.left.equalTo(serviceImage.snp.right).offset(20)
         }
         
-        interactButton.snp.makeConstraints { make in
+        interactionImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.width.equalTo(60)
+            make.height.width.equalTo(34)
             make.right.equalTo(-10)
         }
     }

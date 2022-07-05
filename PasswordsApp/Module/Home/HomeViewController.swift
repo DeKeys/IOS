@@ -105,9 +105,22 @@ extension HomeViewController: HomeViewProtocol {
 
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: -
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ -> UIMenu? in
+            let seeAction = UIAction(title: "See", image: UIImage(systemName: "eyes")) { _ in
+                print("See Action")
+            }
+                
+            let pinAction = UIAction(title: "Pin", image: UIImage(systemName: "pin")) { _ in
+                print("Pin Action")
+            }
+                
+            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
+                print("Delete Action")
+            }
+                
+            return UIMenu(title: "", children: [seeAction, pinAction, deleteAction])
+        }
     }
 }
 
@@ -119,9 +132,9 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.setCell(password: self.filteredPassowrds[indexPath.row])
-        return cell
+        let passwordCell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
+        passwordCell.setCell(password: self.passwords[indexPath.row])
+        return passwordCell
     }
 }
 

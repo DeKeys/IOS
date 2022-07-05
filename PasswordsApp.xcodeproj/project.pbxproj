@@ -30,8 +30,10 @@
 		82948937287201510036DBFD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948936287201510036DBFD /* UIColor+Extension.swift */; };
 		8294893A287201900036DBFD /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82948939287201900036DBFD /* Color.xcassets */; };
 		8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893B287207B00036DBFD /* UIView+Extension.swift */; };
-		8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* PasswordsWorker.swift */; };
+		8294893E287210960036DBFD /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* NetworkLayer.swift */; };
 		82948942287370C30036DBFD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948941287370C30036DBFD /* ServiceView.swift */; };
+		8294894A2874603E0036DBFD /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489492874603E0036DBFD /* KeychainService.swift */; };
+		8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894B28747B5F0036DBFD /* Data+Extension.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +64,10 @@
 		82948936287201510036DBFD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		82948939287201900036DBFD /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		8294893B287207B00036DBFD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		8294893D287210960036DBFD /* PasswordsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsWorker.swift; sourceTree = "<group>"; };
+		8294893D287210960036DBFD /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		82948941287370C30036DBFD /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		829489492874603E0036DBFD /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		8294894B28747B5F0036DBFD /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,7 +120,7 @@
 			children = (
 				829489082870ADB50036DBFD /* Extension */,
 				829489092870ADBB0036DBFD /* UI */,
-				8294890A2870ADC30036DBFD /* Worker */,
+				8294890A2870ADC30036DBFD /* Service */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -130,6 +134,7 @@
 				8294892B2871FE240036DBFD /* UICollectionView+Extension.swift */,
 				82948936287201510036DBFD /* UIColor+Extension.swift */,
 				8294893B287207B00036DBFD /* UIView+Extension.swift */,
+				8294894B28747B5F0036DBFD /* Data+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -145,12 +150,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		8294890A2870ADC30036DBFD /* Worker */ = {
+		8294890A2870ADC30036DBFD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				8294893D287210960036DBFD /* PasswordsWorker.swift */,
+				8294893D287210960036DBFD /* NetworkLayer.swift */,
+				829489492874603E0036DBFD /* KeychainService.swift */,
 			);
-			path = Worker;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		8294890B2870ADDF0036DBFD /* Module */ = {
@@ -359,13 +365,15 @@
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
-				8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */,
+				8294893E287210960036DBFD /* NetworkLayer.swift in Sources */,
 				829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */,
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
+				8294894A2874603E0036DBFD /* KeychainService.swift in Sources */,
 				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,
 				829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */,
 				829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */,
+				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
 				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
 				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
