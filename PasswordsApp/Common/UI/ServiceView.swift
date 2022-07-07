@@ -46,15 +46,7 @@ class ServiceView: UIView {
     private func setupView() {
         
         // style letter
-        let systemFont = UIFont.systemFont(ofSize: CGFloat(24), weight: .semibold)
-        let roundedFont: UIFont
-        if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
-            roundedFont = UIFont(descriptor: descriptor, size: CGFloat(24))
-        } else {
-            roundedFont = systemFont
-        }
-        
-        centeredLabel.font = roundedFont
+        centeredLabel.font = UIFont.systemFont(ofSize: CGFloat(24), weight: .regular)
         centeredLabel.numberOfLines = 0
         centeredLabel.textColor = .white
         

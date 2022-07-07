@@ -34,6 +34,7 @@
 		82948942287370C30036DBFD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948941287370C30036DBFD /* ServiceView.swift */; };
 		8294894A2874603E0036DBFD /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489492874603E0036DBFD /* KeychainService.swift */; };
 		8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894B28747B5F0036DBFD /* Data+Extension.swift */; };
+		82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3E81F2876414500539C18 /* PasswordViewController.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		82948941287370C30036DBFD /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		829489492874603E0036DBFD /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		8294894B28747B5F0036DBFD /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		82F3E81F2876414500539C18 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
 				829489312871FE5D0036DBFD /* Loading */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
+				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
 				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
+				82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */,
 				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
 				8294892A2871FDF20036DBFD /* UIImageView+Extension.swift in Sources */,
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
@@ -530,6 +534,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,6 +563,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

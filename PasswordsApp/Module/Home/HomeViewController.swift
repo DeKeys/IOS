@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import ContextMenu
 
 class HomeViewController: UIViewController {
     
@@ -17,6 +18,15 @@ class HomeViewController: UIViewController {
         }
     }
     var filteredPassowrds: Passwords = []
+    var vcPreview: UIViewController {
+        let viewController = UIViewController()
+          
+        let textLabel = UILabel()
+        textLabel.text = "jnjnjknn"
+        viewController.view.addSubview(textLabel)
+          
+        return viewController
+    }
     
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -47,7 +57,10 @@ extension HomeViewController {
         self.title = "Passwords"
         
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-        let createButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(createButtonTapped))
+        profileButton.image = UIImage(systemName: "person.circle")
+        
+        let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
+        createButton.image = UIImage(systemName: "plus.circle")
 
         self.navigationItem.leftBarButtonItem = profileButton
         self.navigationItem.rightBarButtonItem = createButton
@@ -105,22 +118,35 @@ extension HomeViewController: HomeViewProtocol {
 
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ -> UIMenu? in
-            let seeAction = UIAction(title: "See", image: UIImage(systemName: "eyes")) { _ in
-                print("See Action")
-            }
-                
-            let pinAction = UIAction(title: "Pin", image: UIImage(systemName: "pin")) { _ in
-                print("Pin Action")
-            }
-                
-            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                print("Delete Action")
-            }
-                
-            return UIMenu(title: "", children: [seeAction, pinAction, deleteAction])
-        }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let choosenCell = collectionView.cellForItem(at: indexPath)
+        
+        let currentPassword = self.passwords[indexPath.row]
+        let passwordVC = PasswordViewController()
+        passwordVC.configureUI(service: currentPassword.serviceName, password: currentPassword.password)
+        
+        ContextMenu.shared.show(
+            sourceViewController: self,
+            viewController: passwordVC,
+            options: ContextMenu.Options(
+                durations: ContextMenu.AnimationDurations(
+                    present: 0.1,
+                    springPresent: 0.3,
+                    springDamping: 0.4,
+                    dismiss: 0.2,
+                    resize: 0.1
+                ),
+                containerStyle: ContextMenu.ContainerStyle(
+                    cornerRadius: 12,
+                    motionEffect: true
+                ),
+                menuStyle: .minimal,
+                hapticsStyle: .medium
+            ),
+//            sourceView: choosenCell,
+            delegate: self
+        )
     }
 }
 
@@ -132,8 +158,23 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let currentPassword = self.passwords[indexPath.row]
+        
         let passwordCell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
         passwordCell.setCell(password: self.passwords[indexPath.row])
+        
+//        passwordCell.hiddenButton.showsMenuAsPrimaryAction = true
+//        passwordCell.hiddenButton.menu = UIMenu(title: currentPassword.password, image: UIImage(named: "3d_touch_button"), children: [
+//
+//            UIAction(title: "Option 1") { action in
+//                // do your work
+//            },
+//
+//            UIAction(title: "jnjknnj") { action in
+//                // do your work
+//            },
+//        ])
+        
         return passwordCell
     }
 }
@@ -142,12 +183,12 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     private func calculateCellSize(at indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 40.0, height: 68.0)
+        return CGSize(width: UIScreen.main.bounds.width - 20.0, height: 60)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = calculateCellSize(at: indexPath)
@@ -155,7 +196,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -182,5 +223,15 @@ extension HomeViewController: UISearchResultsUpdating {
         }
         
         self.collectionView.reloadData()
+    }
+}
+
+extension HomeViewController: ContextMenuDelegate {
+    func contextMenuWillDismiss(viewController: UIViewController, animated: Bool) {
+        print("will dismiss")
+    }
+
+    func contextMenuDidDismiss(viewController: UIViewController, animated: Bool) {
+        print("did dismiss")
     }
 }
