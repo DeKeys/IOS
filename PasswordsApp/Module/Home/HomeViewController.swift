@@ -18,16 +18,6 @@ class HomeViewController: UIViewController {
         }
     }
     var filteredPassowrds: Passwords = []
-    var vcPreview: UIViewController {
-        let viewController = UIViewController()
-          
-        let textLabel = UILabel()
-        textLabel.text = "jnjnjknn"
-        viewController.view.addSubview(textLabel)
-          
-        return viewController
-    }
-    
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
@@ -120,8 +110,6 @@ extension HomeViewController: HomeViewProtocol {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let choosenCell = collectionView.cellForItem(at: indexPath)
-        
         let currentPassword = self.passwords[indexPath.row]
         let passwordVC = PasswordViewController()
         passwordVC.configureUI(service: currentPassword.serviceName, password: currentPassword.password)
@@ -144,7 +132,6 @@ extension HomeViewController: UICollectionViewDelegate {
                 menuStyle: .minimal,
                 hapticsStyle: .medium
             ),
-//            sourceView: choosenCell,
             delegate: self
         )
     }
@@ -158,23 +145,8 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let currentPassword = self.passwords[indexPath.row]
-        
         let passwordCell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
         passwordCell.setCell(password: self.passwords[indexPath.row])
-        
-//        passwordCell.hiddenButton.showsMenuAsPrimaryAction = true
-//        passwordCell.hiddenButton.menu = UIMenu(title: currentPassword.password, image: UIImage(named: "3d_touch_button"), children: [
-//
-//            UIAction(title: "Option 1") { action in
-//                // do your work
-//            },
-//
-//            UIAction(title: "jnjknnj") { action in
-//                // do your work
-//            },
-//        ])
-        
         return passwordCell
     }
 }
@@ -185,10 +157,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     private func calculateCellSize(at indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 20.0, height: 60)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = calculateCellSize(at: indexPath)
