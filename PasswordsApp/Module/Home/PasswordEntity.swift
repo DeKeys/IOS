@@ -15,13 +15,13 @@ struct Password: Codable {
     let login: String
     let password: String
     let ipfsHash: String
-    let utcTimestamp: Int
+    let createdAt: Int // as utc timestamp
 
     enum CodingKeys: String, CodingKey {
         case serviceName = "service"
         case login
         case password
         case ipfsHash
-        case utcTimestamp
+        case createdAt
     }
 }
