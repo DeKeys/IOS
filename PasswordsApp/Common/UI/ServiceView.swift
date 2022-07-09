@@ -10,9 +10,11 @@ import SnapKit
 
 class ServiceView: UIView {
     
-    var centeredLetter: String = "" {
+    var serviceName: String = "" {
         didSet {
-            self.centeredLabel.text = centeredLetter
+            if let firstSymbol = serviceName.first {
+                self.centeredLabel.text = String(firstSymbol)
+            }
         }
     }
     
@@ -38,7 +40,7 @@ class ServiceView: UIView {
     }
     
     override func layoutSubviews() {
-        self.backgroundColor = UIColor.random
+        self.backgroundColor = UIColor.generateColorFor(text: serviceName)
         self.layer.cornerRadius = self.layer.bounds.width / 2
         self.layer.masksToBounds = true
     }

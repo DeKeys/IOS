@@ -26,7 +26,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
     func setCell(password: Password) {
         self.password = password
         
-        serviceImage.centeredLetter = String(password.serviceName.first!)
+        serviceImage.serviceName = password.serviceName
         serviceLabel.text = password.serviceName
         loginLabel.text = password.login
     }
@@ -35,17 +35,18 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         self.layer.cornerRadius = 12
     
         // style labels
-        serviceLabel.font = UIFont.systemFont(ofSize: CGFloat(18), weight: .medium)
-        loginLabel.font = UIFont.systemFont(ofSize: CGFloat(16), weight: .regular)
+        serviceLabel.font = UIFont.systemFont(ofSize: CGFloat(20), weight: .medium)
+        loginLabel.font = UIFont.systemFont(ofSize: CGFloat(16), weight: .medium)
         loginLabel.textColor = .darkGray
         
         // style image
-        interactionImage.image = UIImage(named: "3d_touch_button")
+        interactionImage.image = UIImage(systemName: "key.viewfinder")
         
         // cretae stack for labes
         let labelStackView = UIStackView(arrangedSubviews: [serviceLabel, loginLabel])
         labelStackView.distribution = .fillEqually
         labelStackView.axis = .vertical
+        labelStackView.spacing = 0
         
         // place all elemetns on the view
         self.addSubview(serviceImage)
@@ -55,7 +56,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         // add some constraints
         serviceImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.width.height.equalTo(self.frame.height - 2)
+            make.width.height.equalTo(self.frame.height - 8)
             make.left.equalTo(10)
         }
         
@@ -66,7 +67,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         
         interactionImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.height.width.equalTo(34)
+            make.height.width.equalTo(28)
             make.right.equalTo(-10)
         }
     }

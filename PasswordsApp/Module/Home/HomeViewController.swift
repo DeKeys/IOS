@@ -108,7 +108,7 @@ extension HomeViewController: HomeViewProtocol {
 
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentPassword = self.passwords[indexPath.row]
         let passwordVC = PasswordViewController()
@@ -146,7 +146,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let passwordCell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
-        passwordCell.setCell(password: self.passwords[indexPath.row])
+        passwordCell.setCell(password: self.filteredPassowrds[indexPath.row])
         return passwordCell
     }
 }
@@ -155,7 +155,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     private func calculateCellSize(at indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 20.0, height: 60)
+        return CGSize(width: UIScreen.main.bounds.width - 20.0, height: 54)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -164,7 +164,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -179,7 +179,7 @@ extension HomeViewController: UISearchResultsUpdating {
                 var tempPasswords: Passwords = []
                 
                 for password in self.passwords {
-                    if password.serviceName.contains(currentFilter) {
+                    if password.serviceName.hasPrefix(currentFilter) {
                         tempPasswords.append(password)
                     }
                 }
