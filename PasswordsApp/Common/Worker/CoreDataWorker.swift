@@ -10,7 +10,12 @@ import CoreData
 import UIKit
 
 struct CoreDataWorker {
-    var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var context: NSManagedObjectContext {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Cannot find AppDelegate.")
+        }
+        return appDelegate.persistentContainer.viewContext
+    }
     
     /// Function for adding password to the core data
     ///
