@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-    var filteredPassowrds: Passwords = []
+    var filteredPasswords: Passwords = []
     
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         makeLayout()
         
         self.presenter?.getPasswords()
-        filteredPassowrds = passwords
+        filteredPasswords = passwords
     }
 }
 
@@ -128,7 +128,7 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filteredPassowrds.count
+        return filteredPasswords.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -175,9 +175,9 @@ extension HomeViewController: UISearchResultsUpdating {
                     }
                 }
                 
-                self.filteredPassowrds = tempPasswords
+                self.filteredPasswords = tempPasswords
             } else {
-                self.filteredPassowrds = self.passwords
+                self.filteredPasswords = self.passwords
             }
         }
         
