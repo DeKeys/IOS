@@ -11,6 +11,7 @@ import SnapKit
 class HomeViewController: UIViewController {
     
     var presenter: HomePresenterProtocol?
+    var coreDataWorker = CoreDataWorker()
     var passwords: Passwords = [] {
         didSet {
             collectionView.reloadData()
