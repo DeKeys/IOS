@@ -35,6 +35,8 @@
 		8294894A2874603E0036DBFD /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489492874603E0036DBFD /* KeychainService.swift */; };
 		8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894B28747B5F0036DBFD /* Data+Extension.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
+		D2BB24732879EDA300816525 /* CoreDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataLayer.swift */; };
+		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		8294894B28747B5F0036DBFD /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BB24722879EDA300816525 /* CoreDataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLayer.swift; sourceTree = "<group>"; };
+		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 			children = (
 				8294893D287210960036DBFD /* NetworkLayer.swift */,
 				829489492874603E0036DBFD /* KeychainService.swift */,
+				D2BB24722879EDA300816525 /* CoreDataLayer.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */,
 				829488F4286FB4D10036DBFD /* Assets.xcassets */,
 				82948939287201900036DBFD /* Color.xcassets */,
+				D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
 				8294893E287210960036DBFD /* NetworkLayer.swift in Sources */,
 				829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */,
+				D2BB24732879EDA300816525 /* CoreDataLayer.swift in Sources */,
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainService.swift in Sources */,
@@ -381,6 +388,7 @@
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
 				82948942287370C30036DBFD /* ServiceView.swift in Sources */,
 				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
+				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
@@ -593,6 +601,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */,
+			);
+			currentVersion = D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */;
+			path = PasswordsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 829488E0286FB4CF0036DBFD /* Project object */;
 }

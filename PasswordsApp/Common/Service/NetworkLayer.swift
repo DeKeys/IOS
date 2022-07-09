@@ -16,30 +16,9 @@ struct PasswordsWorker {
     
     static func dummyFetch(completion: @escaping (Passwords, Error?) -> Void) {
         let dummyPasswords: Passwords = [
-            Password(serviceName: "Google", login: "hui228", password: "12345678"),
-            Password(serviceName: "Facebook", login: "hui22", password: "12345678"),
-            Password(serviceName: "Twitter", login: "hui2", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678"),
-            Password(serviceName: "Orega", login: "hui", password: "12345678")
+            Password(serviceName: "Google", login: "hui228", password: "12345678", ipfsHash: "1", createdAt: 1)
         ]
-        
+
         completion(dummyPasswords, nil)
     }
 }
