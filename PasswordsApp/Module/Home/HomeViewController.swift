@@ -157,6 +157,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let currentFilter = searchController.searchBar.text {
             if currentFilter != "" {
