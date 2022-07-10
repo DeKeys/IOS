@@ -20,7 +20,6 @@ target "PasswordsApp" do
     pod "Atributika"
     pod "PanModal"
     pod "SwipeCellKit"
-    pod "ContextMenu"
 
     # Analytics
     pod 'AppsFlyerFramework'

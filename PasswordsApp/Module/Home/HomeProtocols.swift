@@ -31,7 +31,7 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {
-    var presenter: HomeInteractorOutputProtocol?  { get set }
+    var presenter: HomeInteractorOutputProtocol? { get set }
     
     func getPasswords()
 }

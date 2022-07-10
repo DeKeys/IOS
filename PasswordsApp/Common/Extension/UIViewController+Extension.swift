@@ -24,3 +24,20 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension UIViewController {
+    
+    func showContextualMenu(
+        _ viewController: UIViewController,
+        sourceView: UIView? = nil,
+        delegate: ContextMenuDelegate? = nil
+        ) {
+        
+        ContextMenu.shared.show(
+            sourceViewController: self,
+            viewController: viewController,
+            sourceView: sourceView,
+            delegate: delegate
+        )
+    }
+}

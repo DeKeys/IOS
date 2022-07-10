@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import ContextMenu
 
 class HomeViewController: UIViewController {
     
@@ -112,26 +111,11 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentPassword = self.passwords[indexPath.row]
         let passwordVC = PasswordViewController()
-        passwordVC.configureUI(service: currentPassword.serviceName, password: currentPassword.password)
+        passwordVC.configureUI(service: currentPassword.serviceName, login: currentPassword.login, password: currentPassword.password)
         
         ContextMenu.shared.show(
             sourceViewController: self,
             viewController: passwordVC,
-            options: ContextMenu.Options(
-                durations: ContextMenu.AnimationDurations(
-                    present: 0.1,
-                    springPresent: 0.3,
-                    springDamping: 0.4,
-                    dismiss: 0.2,
-                    resize: 0.1
-                ),
-                containerStyle: ContextMenu.ContainerStyle(
-                    cornerRadius: 12,
-                    motionEffect: true
-                ),
-                menuStyle: .minimal,
-                hapticsStyle: .medium
-            ),
             delegate: self
         )
     }
