@@ -10,6 +10,9 @@ import SnapKit
 
 class PasswordViewController: UIViewController {
     
+    var presenter: HomePresenterProtocol?
+    var password: Password!
+    
     let serviceLabel = UILabel()
     let pinButton = UIButton()
     let deleteButton = UIButton()
@@ -25,9 +28,11 @@ class PasswordViewController: UIViewController {
         preferredContentSize = CGSize(width: self.view.frame.width - 120, height: 140)
     }
     
-    func configureUI(service: String, login: String, password: String) {
-        setupHeader(service: service)
-        setupCopyButtons(login: login, password: password)
+    func configureUI(with password: Password) {
+        self.password = password
+        
+        setupHeader(service: password.serviceName)
+        setupCopyButtons(login: password.login, password: password.password)
         setupConstraints()
     }
     
@@ -42,6 +47,7 @@ class PasswordViewController: UIViewController {
         
         pinButton.configuration = pinButtonConfiguration
         pinButton.titleLabel?.font =  UIFont.systemFont(ofSize: 18, weight: .medium)
+        pinButton.addTarget(self, action: #selector(pinPassword), for: .touchUpInside)
         
         // service label
         serviceLabel.text = service
@@ -57,6 +63,7 @@ class PasswordViewController: UIViewController {
         
         deleteButton.configuration = deleteButtonConfiguration
         deleteButton.titleLabel?.font =  UIFont.systemFont(ofSize: 18, weight: .medium)
+        deleteButton.addTarget(self, action: #selector(deletePassword), for: .touchUpInside)
         
         // first level stack
         firstLevel.addArrangedSubview(pinButton)
@@ -70,6 +77,14 @@ class PasswordViewController: UIViewController {
         self.view.addSubview(firstLevel)
     }
     
+    @objc func pinPassword(sender: UIButton) {
+        presenter?.pinPassword(password: password)
+    }
+    
+    @objc func deletePassword(sender: UIButton) {
+        presenter?.deletePassword(password: password)
+    }
+    
     private func setupCopyButtons(login: String, password: String) {
         // login button
         var loginButtonConfiguration = UIButton.Configuration.gray()
@@ -81,6 +96,7 @@ class PasswordViewController: UIViewController {
     
         loginButton.configuration = loginButtonConfiguration
         loginButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12, weight: .medium)
+        loginButton.addTarget(self, action: #selector(copyTextToClipboard), for: .touchUpInside)
         
         // password button
         var passwordButtonConfiguration = UIButton.Configuration.gray()
@@ -92,6 +108,7 @@ class PasswordViewController: UIViewController {
         
         passwordButton.configuration = passwordButtonConfiguration
         passwordButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12, weight: .medium)
+        passwordButton.addTarget(self, action: #selector(copyTextToClipboard), for: .touchUpInside)
         
         // second level stack
         secondLevel.addArrangedSubview(loginButton)
@@ -103,6 +120,10 @@ class PasswordViewController: UIViewController {
         
         // add to the view
         self.view.addSubview(secondLevel)
+    }
+    
+    @objc func copyTextToClipboard(sender: UIButton) {
+        UIPasteboard.general.string = sender.titleLabel?.text
     }
     
     private func setupConstraints() {

@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    let contextMenu = ContextMenu.shared
+    let passwordVC = PasswordViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,8 @@ class HomeViewController: UIViewController {
         
         self.presenter?.getPasswords()
         filteredPasswords = passwords
+        
+        passwordVC.presenter = self.presenter
     }
 }
 
@@ -111,10 +115,9 @@ extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentPassword = self.passwords[indexPath.row]
-        let passwordVC = PasswordViewController()
-        passwordVC.configureUI(service: currentPassword.serviceName, login: currentPassword.login, password: currentPassword.password)
+        passwordVC.configureUI(with: currentPassword)
         
-        ContextMenu.shared.show(
+        contextMenu.show(
             sourceViewController: self,
             viewController: passwordVC,
             delegate: self

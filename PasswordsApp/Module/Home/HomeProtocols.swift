@@ -18,6 +18,8 @@ protocol HomePresenterProtocol: AnyObject {
     var interactor: HomeInteractorInputProtocol? { get set }
     
     func getPasswords()
+    func pinPassword(password: Password)
+    func deletePassword(password: Password)
     func showProfile()
     func showNewPassword()
 }
@@ -34,6 +36,8 @@ protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     
     func getPasswords()
+    func pinPassword(password: Password)
+    func deletePassword(password: Password)
 }
 
 // MARK: - View

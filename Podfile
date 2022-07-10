@@ -22,9 +22,9 @@ target "PasswordsApp" do
     pod "SwipeCellKit"
 
     # Analytics
-    pod 'AppsFlyerFramework'
-    pod 'Firebase/Analytics'
-    pod 'Firebase/Crashlytics'
-    pod 'Firebase/Performance'
+    pod "AppsFlyerFramework"
+    pod "Firebase/Analytics"
+    pod "Firebase/Crashlytics"
+    pod "Firebase/Performance"
 
 end
