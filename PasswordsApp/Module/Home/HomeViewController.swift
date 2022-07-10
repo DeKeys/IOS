@@ -47,7 +47,10 @@ extension HomeViewController {
         self.title = "Passwords"
         
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-        let createButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(createButtonTapped))
+        profileButton.image = UIImage(systemName: "person.circle")
+        
+        let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
+        createButton.image = UIImage(systemName: "plus.circle")
 
         self.navigationItem.leftBarButtonItem = profileButton
         self.navigationItem.rightBarButtonItem = createButton
@@ -105,22 +108,17 @@ extension HomeViewController: HomeViewProtocol {
 
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ -> UIMenu? in
-            let seeAction = UIAction(title: "See", image: UIImage(systemName: "eyes")) { _ in
-                print("See Action")
-            }
-                
-            let pinAction = UIAction(title: "Pin", image: UIImage(systemName: "pin")) { _ in
-                print("Pin Action")
-            }
-                
-            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                print("Delete Action")
-            }
-                
-            return UIMenu(title: "", children: [seeAction, pinAction, deleteAction])
-        }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let currentPassword = self.passwords[indexPath.row]
+        let passwordVC = PasswordViewController()
+        passwordVC.configureUI(service: currentPassword.serviceName, login: currentPassword.login, password: currentPassword.password)
+        
+        ContextMenu.shared.show(
+            sourceViewController: self,
+            viewController: passwordVC,
+            delegate: self
+        )
     }
 }
 
@@ -133,7 +131,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let passwordCell: PasswordCell = collectionView.dequeueReusableCell(for: indexPath)
-        passwordCell.setCell(password: self.passwords[indexPath.row])
+        passwordCell.setCell(password: self.filteredPasswords[indexPath.row])
         return passwordCell
     }
 }
@@ -142,11 +140,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     private func calculateCellSize(at indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 40.0, height: 68.0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return CGSize(width: UIScreen.main.bounds.width - 20.0, height: 54)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -155,7 +149,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -164,13 +158,14 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let currentFilter = searchController.searchBar.text {
             if currentFilter != "" {
                 var tempPasswords: Passwords = []
                 
                 for password in self.passwords {
-                    if password.serviceName.contains(currentFilter) {
+                    if password.serviceName.hasPrefix(currentFilter) {
                         tempPasswords.append(password)
                     }
                 }
@@ -182,5 +177,15 @@ extension HomeViewController: UISearchResultsUpdating {
         }
         
         self.collectionView.reloadData()
+    }
+}
+
+extension HomeViewController: ContextMenuDelegate {
+    func contextMenuWillDismiss(viewController: UIViewController, animated: Bool) {
+        print("will dismiss")
+    }
+
+    func contextMenuDidDismiss(viewController: UIViewController, animated: Bool) {
+        print("did dismiss")
     }
 }

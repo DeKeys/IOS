@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478B287B013D00D34207 /* CGRect+Extension.swift */; };
+		8273478E287B017C00D34207 /* ClippedContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478D287B017C00D34207 /* ClippedContainerViewController.swift */; };
+		82734790287B018D00D34207 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478F287B018D00D34207 /* ContextMenu.swift */; };
+		82734792287B01FC00D34207 /* ContextMenuDismissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734791287B01FC00D34207 /* ContextMenuDismissing.swift */; };
+		82734794287B020D00D34207 /* ContextMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734793287B020D00D34207 /* ContextMenuPresentationController.swift */; };
+		82734796287B021C00D34207 /* ContextMenuPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734795287B021C00D34207 /* ContextMenuPresenting.swift */; };
+		82734798287B022E00D34207 /* SourceViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734797287B022E00D34207 /* SourceViewCorner.swift */; };
+		8273479A287B7B7500D34207 /* ContextMenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734799287B7B7500D34207 /* ContextMenuProtocols.swift */; };
 		829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488EB286FB4CF0036DBFD /* AppDelegate.swift */; };
 		829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488ED286FB4CF0036DBFD /* SceneDelegate.swift */; };
 		829488F5286FB4D10036DBFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829488F4286FB4D10036DBFD /* Assets.xcassets */; };
@@ -34,6 +42,7 @@
 		82948942287370C30036DBFD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948941287370C30036DBFD /* ServiceView.swift */; };
 		8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489492874603E0036DBFD /* KeychainWorker.swift */; };
 		8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894B28747B5F0036DBFD /* Data+Extension.swift */; };
+		82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3E81F2876414500539C18 /* PasswordViewController.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
@@ -41,6 +50,14 @@
 
 /* Begin PBXFileReference section */
 		1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.release.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.release.xcconfig"; sourceTree = "<group>"; };
+		8273478B287B013D00D34207 /* CGRect+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
+		8273478D287B017C00D34207 /* ClippedContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedContainerViewController.swift; sourceTree = "<group>"; };
+		8273478F287B018D00D34207 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
+		82734791287B01FC00D34207 /* ContextMenuDismissing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuDismissing.swift; sourceTree = "<group>"; };
+		82734793287B020D00D34207 /* ContextMenuPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuPresentationController.swift; sourceTree = "<group>"; };
+		82734795287B021C00D34207 /* ContextMenuPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenting.swift; sourceTree = "<group>"; };
+		82734797287B022E00D34207 /* SourceViewCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewCorner.swift; sourceTree = "<group>"; };
+		82734799287B7B7500D34207 /* ContextMenuProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuProtocols.swift; sourceTree = "<group>"; };
 		829488E8286FB4CF0036DBFD /* PasswordsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		829488EB286FB4CF0036DBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829488ED286FB4CF0036DBFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +87,7 @@
 		82948941287370C30036DBFD /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		829489492874603E0036DBFD /* KeychainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWorker.swift; sourceTree = "<group>"; };
 		8294894B28747B5F0036DBFD /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		82F3E81F2876414500539C18 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
@@ -88,6 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8273478A287B011700D34207 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8273478D287B017C00D34207 /* ClippedContainerViewController.swift */,
+				8273478F287B018D00D34207 /* ContextMenu.swift */,
+				82734799287B7B7500D34207 /* ContextMenuProtocols.swift */,
+				82734791287B01FC00D34207 /* ContextMenuDismissing.swift */,
+				82734793287B020D00D34207 /* ContextMenuPresentationController.swift */,
+				82734795287B021C00D34207 /* ContextMenuPresenting.swift */,
+				82734797287B022E00D34207 /* SourceViewCorner.swift */,
+			);
+			path = ContextMenu;
+			sourceTree = "<group>";
+		};
 		829488DF286FB4CF0036DBFD = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +171,7 @@
 				82948936287201510036DBFD /* UIColor+Extension.swift */,
 				8294893B287207B00036DBFD /* UIView+Extension.swift */,
 				8294894B28747B5F0036DBFD /* Data+Extension.swift */,
+				8273478B287B013D00D34207 /* CGRect+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -150,6 +183,8 @@
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
 				829489312871FE5D0036DBFD /* Loading */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
+				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
+				8273478A287B011700D34207 /* ContextMenu */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -369,6 +404,7 @@
 			files = (
 				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
+				82734792287B01FC00D34207 /* ContextMenuDismissing.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
 				8294893E287210960036DBFD /* NetworkWorker.swift in Sources */,
@@ -377,12 +413,20 @@
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
+				8273479A287B7B7500D34207 /* ContextMenuProtocols.swift in Sources */,
+				8273478E287B017C00D34207 /* ClippedContainerViewController.swift in Sources */,
+				8294894A2874603E0036DBFD /* KeychainService.swift in Sources */,
+				82734798287B022E00D34207 /* SourceViewCorner.swift in Sources */,
+				82734796287B021C00D34207 /* ContextMenuPresenting.swift in Sources */,
 				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,
 				829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */,
 				829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */,
+				82734790287B018D00D34207 /* ContextMenu.swift in Sources */,
 				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
+				8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */,
 				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
+				82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */,
 				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
 				8294892A2871FDF20036DBFD /* UIImageView+Extension.swift in Sources */,
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
@@ -392,6 +436,7 @@
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
+				82734794287B020D00D34207 /* ContextMenuPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +583,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,6 +612,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

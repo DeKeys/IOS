@@ -10,9 +10,11 @@ import SnapKit
 
 class ServiceView: UIView {
     
-    var centeredLetter: String = "" {
+    var serviceName: String = "" {
         didSet {
-            self.centeredLabel.text = centeredLetter
+            if let firstSymbol = serviceName.first {
+                self.centeredLabel.text = String(firstSymbol)
+            }
         }
     }
     
@@ -38,7 +40,7 @@ class ServiceView: UIView {
     }
     
     override func layoutSubviews() {
-        self.backgroundColor = UIColor.random
+        self.backgroundColor = UIColor.generateColorFor(text: serviceName)
         self.layer.cornerRadius = self.layer.bounds.width / 2
         self.layer.masksToBounds = true
     }
@@ -46,15 +48,7 @@ class ServiceView: UIView {
     private func setupView() {
         
         // style letter
-        let systemFont = UIFont.systemFont(ofSize: CGFloat(24), weight: .semibold)
-        let roundedFont: UIFont
-        if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
-            roundedFont = UIFont(descriptor: descriptor, size: CGFloat(24))
-        } else {
-            roundedFont = systemFont
-        }
-        
-        centeredLabel.font = roundedFont
+        centeredLabel.font = UIFont.systemFont(ofSize: CGFloat(24), weight: .regular)
         centeredLabel.numberOfLines = 0
         centeredLabel.textColor = .white
         

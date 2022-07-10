@@ -2,6 +2,7 @@
 disabled_rules:
   - line_length
   - trailing_whitespace
+  - identifier_name
 
 # paths to ignore during linting. Takes precedence over `included`.
 excluded:
