@@ -108,6 +108,12 @@ extension HomeViewController: HomeViewProtocol {
         self.hideLoadingDialog()
         self.showActivityPopup(title: message)
     }
+    
+    func closePasswordVC() {
+        self.presenter?.getPasswords()
+        filteredPasswords = passwords
+        self.passwordVC.dismiss(animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDelegate

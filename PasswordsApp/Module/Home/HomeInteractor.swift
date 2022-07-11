@@ -64,6 +64,16 @@ class HomeInteractor: HomeInteractorInputProtocol {
     }
     
     func deletePassword(password: Password) {
-        print("Delete password")
+        // TODO: delete password from server
+        
+        do {
+            try coreDataWorker.deletePassword(ipfsHash: password.ipfsHash)
+            let status = KeychainWorker.delete(key: password.ipfsHash)
+            if status != errSecSuccess {
+                self.presenter?.errorService(message: "Couldn't delete password from keychain. Status code: \(status)")
+            }
+        } catch {
+            self.presenter?.errorService(message: error.localizedDescription)
+        }
     }
 }
