@@ -11,7 +11,13 @@ import SnapKit
 class PasswordViewController: UIViewController {
     
     var presenter: HomePresenterProtocol?
-    var password: Password!
+    var password: Password! {
+        didSet {
+            serviceLabel.text = password.serviceName
+            loginButton.setTitle(password.login, for: .normal)
+            passwordButton.setTitle(password.password, for: .normal)
+        }
+    }
     
     let serviceLabel = UILabel()
     let pinButton = UIButton()
@@ -26,17 +32,17 @@ class PasswordViewController: UIViewController {
         super.viewDidLoad()
         
         preferredContentSize = CGSize(width: self.view.frame.width - 120, height: 140)
+        
+        setupHeader()
+        setupCopyButtons()
+        setupConstraints()
     }
     
     func configureUI(with password: Password) {
         self.password = password
-        
-        setupHeader(service: password.serviceName)
-        setupCopyButtons(login: password.login, password: password.password)
-        setupConstraints()
     }
     
-    private func setupHeader(service: String) {
+    private func setupHeader() {
         // pin button
         var pinButtonConfiguration = UIButton.Configuration.plain()
         pinButtonConfiguration.buttonSize = .small
@@ -50,7 +56,6 @@ class PasswordViewController: UIViewController {
         pinButton.addTarget(self, action: #selector(pinPassword), for: .touchUpInside)
         
         // service label
-        serviceLabel.text = service
         serviceLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         
         // delete button
@@ -85,10 +90,9 @@ class PasswordViewController: UIViewController {
         presenter?.deletePassword(password: password)
     }
     
-    private func setupCopyButtons(login: String, password: String) {
+    private func setupCopyButtons() {
         // login button
         var loginButtonConfiguration = UIButton.Configuration.gray()
-        loginButtonConfiguration.title = login
         loginButtonConfiguration.baseForegroundColor = .darkGray
         loginButtonConfiguration.image = UIImage(systemName: "doc.on.doc")
         loginButtonConfiguration.buttonSize = .medium
@@ -100,7 +104,6 @@ class PasswordViewController: UIViewController {
         
         // password button
         var passwordButtonConfiguration = UIButton.Configuration.gray()
-        passwordButtonConfiguration.title = password
         passwordButtonConfiguration.baseForegroundColor = .darkGray
         passwordButtonConfiguration.image = UIImage(systemName: "doc.on.doc")
         passwordButtonConfiguration.buttonSize = .medium

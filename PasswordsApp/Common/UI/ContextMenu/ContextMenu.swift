@@ -37,7 +37,6 @@ class ContextMenu: NSObject {
         menu.viewController.modalPresentationCapturesStatusBarAppearance = true
         sourceViewController.present(menu.viewController, animated: true)
     }
-
 }
 
 // MARK: - Menu Class

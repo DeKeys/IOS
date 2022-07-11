@@ -181,8 +181,8 @@
 			children = (
 				8294892D2871FE3A0036DBFD /* ReusableView.swift */,
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
-				829489312871FE5D0036DBFD /* Loading */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
+				829489312871FE5D0036DBFD /* Loading */,
 				8273478A287B011700D34207 /* ContextMenu */,
 			);
 			path = UI;
