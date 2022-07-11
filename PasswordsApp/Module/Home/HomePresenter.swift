@@ -22,6 +22,14 @@ class HomePresenter: HomePresenterProtocol {
     func getPasswords() {
         interactor?.getPasswords()
     }
+    
+    func pinPassword(password: Password) {
+        interactor?.pinPassword(password: password)
+    }
+    
+    func deletePassword(password: Password) {
+        interactor?.deletePassword(password: password)
+    }
 }
 
 // MARK: - PostInteractorOutputProtocol

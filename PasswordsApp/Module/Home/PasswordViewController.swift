@@ -10,6 +10,15 @@ import SnapKit
 
 class PasswordViewController: UIViewController {
     
+    var presenter: HomePresenterProtocol?
+    var password: Password! {
+        didSet {
+            serviceLabel.text = password.serviceName
+            loginButton.setTitle(password.login, for: .normal)
+            passwordButton.setTitle(password.password, for: .normal)
+        }
+    }
+    
     let serviceLabel = UILabel()
     let pinButton = UIButton()
     let deleteButton = UIButton()
@@ -23,15 +32,17 @@ class PasswordViewController: UIViewController {
         super.viewDidLoad()
         
         preferredContentSize = CGSize(width: self.view.frame.width - 120, height: 140)
-    }
-    
-    func configureUI(service: String, login: String, password: String) {
-        setupHeader(service: service)
-        setupCopyButtons(login: login, password: password)
+        
+        setupHeader()
+        setupCopyButtons()
         setupConstraints()
     }
     
-    private func setupHeader(service: String) {
+    func configureUI(with password: Password) {
+        self.password = password
+    }
+    
+    private func setupHeader() {
         // pin button
         var pinButtonConfiguration = UIButton.Configuration.plain()
         pinButtonConfiguration.buttonSize = .small
@@ -42,9 +53,9 @@ class PasswordViewController: UIViewController {
         
         pinButton.configuration = pinButtonConfiguration
         pinButton.titleLabel?.font =  UIFont.systemFont(ofSize: 18, weight: .medium)
+        pinButton.addTarget(self, action: #selector(pinPassword), for: .touchUpInside)
         
         // service label
-        serviceLabel.text = service
         serviceLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         
         // delete button
@@ -57,6 +68,7 @@ class PasswordViewController: UIViewController {
         
         deleteButton.configuration = deleteButtonConfiguration
         deleteButton.titleLabel?.font =  UIFont.systemFont(ofSize: 18, weight: .medium)
+        deleteButton.addTarget(self, action: #selector(deletePassword), for: .touchUpInside)
         
         // first level stack
         firstLevel.addArrangedSubview(pinButton)
@@ -70,10 +82,17 @@ class PasswordViewController: UIViewController {
         self.view.addSubview(firstLevel)
     }
     
-    private func setupCopyButtons(login: String, password: String) {
+    @objc func pinPassword(sender: UIButton) {
+        presenter?.pinPassword(password: password)
+    }
+    
+    @objc func deletePassword(sender: UIButton) {
+        presenter?.deletePassword(password: password)
+    }
+    
+    private func setupCopyButtons() {
         // login button
         var loginButtonConfiguration = UIButton.Configuration.gray()
-        loginButtonConfiguration.title = login
         loginButtonConfiguration.baseForegroundColor = .darkGray
         loginButtonConfiguration.image = UIImage(systemName: "doc.on.doc")
         loginButtonConfiguration.buttonSize = .medium
@@ -81,10 +100,10 @@ class PasswordViewController: UIViewController {
     
         loginButton.configuration = loginButtonConfiguration
         loginButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12, weight: .medium)
+        loginButton.addTarget(self, action: #selector(copyTextToClipboard), for: .touchUpInside)
         
         // password button
         var passwordButtonConfiguration = UIButton.Configuration.gray()
-        passwordButtonConfiguration.title = password
         passwordButtonConfiguration.baseForegroundColor = .darkGray
         passwordButtonConfiguration.image = UIImage(systemName: "doc.on.doc")
         passwordButtonConfiguration.buttonSize = .medium
@@ -92,6 +111,7 @@ class PasswordViewController: UIViewController {
         
         passwordButton.configuration = passwordButtonConfiguration
         passwordButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12, weight: .medium)
+        passwordButton.addTarget(self, action: #selector(copyTextToClipboard), for: .touchUpInside)
         
         // second level stack
         secondLevel.addArrangedSubview(loginButton)
@@ -103,6 +123,10 @@ class PasswordViewController: UIViewController {
         
         // add to the view
         self.view.addSubview(secondLevel)
+    }
+    
+    @objc func copyTextToClipboard(sender: UIButton) {
+        UIPasteboard.general.string = sender.titleLabel?.text
     }
     
     private func setupConstraints() {

@@ -181,9 +181,8 @@
 			children = (
 				8294892D2871FE3A0036DBFD /* ReusableView.swift */,
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
-				829489312871FE5D0036DBFD /* Loading */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
-				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
+				829489312871FE5D0036DBFD /* Loading */,
 				8273478A287B011700D34207 /* ContextMenu */,
 			);
 			path = UI;
@@ -216,6 +215,7 @@
 				829489142871EB530036DBFD /* HomePresenter.swift */,
 				829489232871FCB10036DBFD /* HomeInteractor.swift */,
 				829489212871ED140036DBFD /* PasswordEntity.swift */,
+				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
 				8294891A2871EBDA0036DBFD /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -415,7 +415,7 @@
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				8273479A287B7B7500D34207 /* ContextMenuProtocols.swift in Sources */,
 				8273478E287B017C00D34207 /* ClippedContainerViewController.swift in Sources */,
-				8294894A2874603E0036DBFD /* KeychainService.swift in Sources */,
+				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				82734798287B022E00D34207 /* SourceViewCorner.swift in Sources */,
 				82734796287B021C00D34207 /* ContextMenuPresenting.swift in Sources */,
 				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,

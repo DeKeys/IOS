@@ -20,4 +20,12 @@ class HomeInteractor: HomeInteractorInputProtocol {
             self.presenter?.resultPasswords(passwords: passwords)
         }
     }
+    
+    func pinPassword(password: Password) {
+        print("Pin password")
+    }
+    
+    func deletePassword(password: Password) {
+        print("Delete password")
+    }
 }
