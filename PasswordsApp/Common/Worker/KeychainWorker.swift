@@ -8,7 +8,7 @@
 import Security
 import UIKit
 
-class KeyChain {
+class KeychainWorker {
 
     class func save(key: String, data: Data) -> OSStatus {
         let query: [String : Any] = [
