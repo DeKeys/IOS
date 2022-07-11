@@ -16,6 +16,7 @@ struct Password: Codable {
     let password: String
     let ipfsHash: String
     let createdAt: Int // as utc timestamp
+    var pinIndex: Int = -1
 
     enum CodingKeys: String, CodingKey {
         case serviceName = "service"
