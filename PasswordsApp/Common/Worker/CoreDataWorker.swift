@@ -37,4 +37,20 @@ struct CoreDataWorker {
     func fetchPasswords() throws -> [CachePassword] {
         return try context.fetch(CachePassword.fetchRequest())
     }
+    
+    /// Function for deleting password from core data
+    ///
+    /// - Parameter ipfsHash: ipfsHash of password to be deleten
+    /// - Throws: NSManagedObjectContext.(save or fetch) error
+    func deletePassword(ipfsHash: String) throws {
+        let request = CachePassword.fetchRequest()
+        request.predicate = NSPredicate(format: "ipfsHash = %@", ipfsHash)
+        request.fetchLimit = 1
+        
+        let result = try context.fetch(request)
+        if let password = result.first {
+            context.delete(password)
+            try context.save()
+        } 
+    }
 }
