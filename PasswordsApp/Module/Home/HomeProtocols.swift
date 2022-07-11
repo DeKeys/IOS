@@ -17,6 +17,7 @@ protocol HomeRouterProtocol: AnyObject {
 protocol HomePresenterProtocol: AnyObject {
     var interactor: HomeInteractorInputProtocol? { get set }
     
+    func addPassword(serviceName: String, login: String, password: String)
     func getPasswords()
     func pinPassword(password: Password)
     func deletePassword(password: Password)
@@ -35,6 +36,7 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     
+    func addPassword(serviceName: String, login: String, password: String)
     func getPasswords()
     func pinPassword(password: Password)
     func deletePassword(password: Password)
@@ -44,6 +46,7 @@ protocol HomeInteractorInputProtocol: AnyObject {
 protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtocol?  { get set }
 
+    func closePasswordVC()
     func setPasswords(passwords: Passwords)
     func errorService(message: String)
 }
