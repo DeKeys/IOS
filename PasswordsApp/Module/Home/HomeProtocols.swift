@@ -49,4 +49,5 @@ protocol HomeViewProtocol: AnyObject {
     func closePasswordVC()
     func setPasswords(passwords: Passwords)
     func errorService(message: String)
+    func reloadCollectionView()
 }

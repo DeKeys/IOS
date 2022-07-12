@@ -40,6 +40,7 @@ class PasswordViewController: UIViewController {
     
     func configureUI(with password: Password) {
         self.password = password
+        setupHeader()
     }
     
     private func setupHeader() {
@@ -48,7 +49,7 @@ class PasswordViewController: UIViewController {
         pinButtonConfiguration.buttonSize = .small
         pinButtonConfiguration.imagePlacement = .leading
         pinButtonConfiguration.imagePadding = 8
-        pinButtonConfiguration.image = UIImage(systemName: "star")
+        pinButtonConfiguration.image = UIImage(systemName: password.pinned ? "star.fill" : "star")
         pinButtonConfiguration.baseForegroundColor = .orange
         
         pinButton.configuration = pinButtonConfiguration
@@ -85,6 +86,8 @@ class PasswordViewController: UIViewController {
     
     @objc func pinPassword(sender: UIButton) {
         presenter?.pinPassword(password: password)
+        pinButton.configuration?.image = UIImage(systemName: password.pinned ? "star" : "star.fill")
+        password.pinned = !password.pinned
     }
     
     @objc func deletePassword(sender: UIButton) {

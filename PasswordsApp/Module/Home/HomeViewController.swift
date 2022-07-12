@@ -113,9 +113,13 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func closePasswordVC() {
+        reloadCollectionView()
+        self.passwordVC.dismiss(animated: true)
+    }
+    
+    func reloadCollectionView() {
         self.presenter?.getPasswords()
         filteredPasswords = passwords
-        self.passwordVC.dismiss(animated: true)
     }
 }
 

@@ -37,13 +37,18 @@ class HomeInteractor: HomeInteractorInputProtocol {
         do {
             let decoder = JSONDecoder()
             let cachedPasswords = try coreDataWorker.fetchPasswords()
-            var passwords = Passwords()
-            for pwd in cachedPasswords {
+            var pinnedPasswords = Passwords()
+            var unpinnedPasswords = Passwords()
+            for pwd in cachedPasswords  {
                 // Decode password and add it to the result array
                 if let encodedPassword = KeychainWorker.load(key: pwd.ipfsHash!) {
                     var decodedPassword = try decoder.decode(Password.self, from: encodedPassword)
-                    decodedPassword.pinIndex = Int(pwd.pinIndex)
-                    passwords.append(decodedPassword)
+                    decodedPassword.pinned = pwd.pinned
+                    if pwd.pinned {
+                        pinnedPasswords.append(decodedPassword)
+                    } else {
+                        unpinnedPasswords.append(decodedPassword)
+                    }
                 } else {
                     self.presenter?.errorService(message: "Couldn't load password with hash \(pwd.ipfsHash!)")
                     // Clean up core data and keychain
@@ -55,14 +60,16 @@ class HomeInteractor: HomeInteractorInputProtocol {
                     }
                 }
             }
-            self.presenter?.resultPasswords(passwords: passwords)
+            pinnedPasswords.sort { $0.serviceName < $1.serviceName }
+            unpinnedPasswords.sort { $0.serviceName < $1.serviceName }
+            self.presenter?.resultPasswords(passwords: pinnedPasswords + unpinnedPasswords)
         } catch {
             self.presenter?.errorService(message: error.localizedDescription)
         }
     }
     
     func pinPassword(password: Password) {
-        print("Pin password")
+        coreDataWorker.setPinned(ipfsHash: password.ipfsHash, pinned: !password.pinned)
     }
     
     func deletePassword(password: Password) {

@@ -29,6 +29,7 @@ class HomePresenter: HomePresenterProtocol {
     
     func pinPassword(password: Password) {
         interactor?.pinPassword(password: password)
+        view?.reloadCollectionView()
     }
     
     func deletePassword(password: Password) {
