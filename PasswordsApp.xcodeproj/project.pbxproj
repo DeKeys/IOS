@@ -43,6 +43,7 @@
 		8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489492874603E0036DBFD /* KeychainWorker.swift */; };
 		8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894B28747B5F0036DBFD /* Data+Extension.swift */; };
 		82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3E81F2876414500539C18 /* PasswordViewController.swift */; };
+		82F93480287D5F1400D588E8 /* assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F9347F287D5F1400D588E8 /* assets.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
@@ -88,6 +89,7 @@
 		829489492874603E0036DBFD /* KeychainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWorker.swift; sourceTree = "<group>"; };
 		8294894B28747B5F0036DBFD /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		82F3E81F2876414500539C18 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		82F9347F287D5F1400D588E8 /* assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assets.swift; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
@@ -242,12 +244,21 @@
 		82948938287201630036DBFD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				82F9347E287D5EE300D588E8 /* SwiftGen */,
 				829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */,
 				829488F4286FB4D10036DBFD /* Assets.xcassets */,
 				82948939287201900036DBFD /* Color.xcassets */,
 				D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		82F9347E287D5EE300D588E8 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				82F9347F287D5F1400D588E8 /* assets.swift */,
+			);
+			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 		85D605F9B56F18C97127E5D2 /* Frameworks */ = {
@@ -432,6 +443,7 @@
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
 				82948942287370C30036DBFD /* ServiceView.swift in Sources */,
 				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
+				82F93480287D5F1400D588E8 /* assets.swift in Sources */,
 				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,

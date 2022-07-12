@@ -36,11 +36,14 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
         // style labels
         serviceLabel.font = UIFont.systemFont(ofSize: CGFloat(20), weight: .medium)
+        serviceLabel.textColor = .textColor
+        
         loginLabel.font = UIFont.systemFont(ofSize: CGFloat(16), weight: .medium)
-        loginLabel.textColor = .darkGray
+        loginLabel.textColor = .textColor
         
         // style image
         interactionImage.image = UIImage(systemName: "key.viewfinder")
+        interactionImage.tintColor = .textColor
         
         // cretae stack for labes
         let labelStackView = UIStackView(arrangedSubviews: [serviceLabel, loginLabel])

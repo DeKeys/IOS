@@ -11,25 +11,11 @@ import UIKit
 extension UIColor {
     
     static var viewBackground: UIColor {
-        if #available(iOS 13, *) {
-            return UIColor(named: "viewBackground")!
-        }
-        return .white
+        return Asset.viewBackground.color
     }
     
-    static var navBarBackground: UIColor {
-        if #available(iOS 13, *) {
-            return UIColor(named: "navBarBackground")!
-        }
-        return .white
-    }
-    
-    var isDarkColor: Bool {
-        var red, green, blue, alpha: CGFloat
-        (red, green, blue, alpha) = (0, 0, 0, 0)
-        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        let lum = 0.2126 * red + 0.7152 * green + 0.0722 * blue
-        return lum < 0.50 ? true : false
+    static var textColor: UIColor {
+        return Asset.textColor.color
     }
 }
 
