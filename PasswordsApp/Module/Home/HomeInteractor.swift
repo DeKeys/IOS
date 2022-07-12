@@ -42,7 +42,7 @@ class HomeInteractor: HomeInteractorInputProtocol {
                 // Decode password and add it to the result array
                 if let encodedPassword = KeychainWorker.load(key: pwd.ipfsHash!) {
                     var decodedPassword = try decoder.decode(Password.self, from: encodedPassword)
-                    decodedPassword.pinIndex = Int(pwd.pinIndex)
+                    decodedPassword.pinned = pwd.pinned
                     passwords.append(decodedPassword)
                 } else {
                     self.presenter?.errorService(message: "Couldn't load password with hash \(pwd.ipfsHash!)")
@@ -62,7 +62,7 @@ class HomeInteractor: HomeInteractorInputProtocol {
     }
     
     func pinPassword(password: Password) {
-        print("Pin password")
+        coreDataWorker.setPinned(ipfsHash: password.ipfsHash, pinned: !password.pinned)
     }
     
     func deletePassword(password: Password) {
