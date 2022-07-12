@@ -8,8 +8,10 @@
 import UIKit
 
 class HomeInteractor: HomeInteractorInputProtocol {
+    
     weak var presenter: HomeInteractorOutputProtocol?
-    var coreDataWorker = CoreDataWorker()
+    
+    let coreDataWorker = CoreDataWorker()
     
     func addPassword(serviceName: String, login: String, password: String) {
         // TODO: add password to the server

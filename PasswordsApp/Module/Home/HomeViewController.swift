@@ -51,10 +51,12 @@ extension HomeViewController {
         self.title = "Passwords"
         
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-        profileButton.image = UIImage(systemName: "person.circle")
+        profileButton.image = UIImage(systemName: "gearshape")
+        profileButton.tintColor = .textColor
         
         let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
-        createButton.image = UIImage(systemName: "plus.circle")
+        createButton.image = UIImage(systemName: "plus")
+        createButton.tintColor = .textColor
 
         self.navigationItem.leftBarButtonItem = profileButton
         self.navigationItem.rightBarButtonItem = createButton
@@ -66,6 +68,7 @@ extension HomeViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.definesPresentationContext = true
+        searchController.searchBar.tintColor = .textColor
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PasswordsWorker {
+struct NetworkWorker {
     
     // TODO: - Implement Function
     static func fetchPasswords(completion: @escaping (Passwords, Error?) -> Void) {
