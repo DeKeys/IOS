@@ -87,6 +87,7 @@ class PasswordViewController: UIViewController {
     @objc func pinPassword(sender: UIButton) {
         presenter?.pinPassword(password: password)
         pinButton.configuration?.image = UIImage(systemName: password.pinned ? "star" : "star.fill")
+        password.pinned = !password.pinned
     }
     
     @objc func deletePassword(sender: UIButton) {
