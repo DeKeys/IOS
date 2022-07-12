@@ -24,7 +24,7 @@ struct CoreDataWorker {
     func addPassword(ipfsHash: String) throws {
         let newPassword = CachePassword(context: context)
         newPassword.ipfsHash = ipfsHash
-        newPassword.pinIndex = -1
+        newPassword.pinned = false
         
         context.insert(newPassword)
         try context.save()
@@ -52,5 +52,19 @@ struct CoreDataWorker {
             context.delete(password)
             try context.save()
         } 
+    }
+    
+    /// Function for changing pin index of password
+    ///
+    /// - Parameter ipfsHash: ipfsHash of password
+    /// - Parameter pinned: status of password pin
+    func setPinned(ipfsHash: String, pinned: Bool) {
+        let request = CachePassword.fetchRequest()
+        request.predicate = NSPredicate(format: "ipfsHash = %@", ipfsHash)
+        request.fetchLimit = 1
+        if let password = (try? context.fetch(request))?.first {
+            password.pinned = pinned
+            try? context.save()
+        }
     }
 }
