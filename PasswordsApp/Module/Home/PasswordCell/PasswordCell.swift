@@ -29,6 +29,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         serviceImage.serviceName = password.serviceName
         serviceLabel.text = password.serviceName
         loginLabel.text = password.login
+        interactionImage.image = UIImage(systemName: password.pinned ? "pin.circle" : "key.viewfinder")
     }
 
     fileprivate func makeLayout() {
@@ -42,7 +43,6 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         loginLabel.textColor = .textColor
         
         // style image
-        interactionImage.image = UIImage(systemName: "key.viewfinder")
         interactionImage.tintColor = .textColor
         
         // cretae stack for labes
