@@ -13,7 +13,7 @@ class ServiceView: UIView {
     var serviceName: String = "" {
         didSet {
             if let firstSymbol = serviceName.first {
-                self.centeredLabel.text = String(firstSymbol)
+                self.centeredLabel.text = String(firstSymbol.uppercased())
             }
         }
     }
