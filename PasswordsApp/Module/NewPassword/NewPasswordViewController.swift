@@ -35,6 +35,7 @@ class NewPasswordViewController: UIViewController {
         setupConstraints()
     }
     
+    // MARK: - UI Setup
     private func setupUI() {
         self.view.backgroundColor = .viewBackground
         
@@ -108,14 +109,17 @@ class NewPasswordViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = createButton
     }
     
+    // MARK: - Selectors
     @objc func createButtonTapped(_ sender: UIBarButtonItem?) {
         print("Create pwd")
     }
     
     @objc func generateButtonTapped(_ sender: UIButton?) {
-        print("Generate password")
+        print("Generate view")
+        presenter?.generatePassword()
     }
 
+    // MARK: - Constraints
     private func setupConstraints() {
         serviceStackView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
@@ -140,5 +144,20 @@ class NewPasswordViewController: UIViewController {
             make.height.equalTo(self.passwordTextField.snp.height)
             make.left.equalTo(self.passwordTextField.snp.right).offset(8)
         }
+    }
+}
+
+// MARK: - Protocol stubs
+extension NewPasswordViewController: NewPasswordViewProtocol {
+    func setPassword(password: String) {
+        self.passwordTextField.text = password
+    }
+    
+    func close() {
+        self.dismiss(animated: true)
+    }
+    
+    func errorService(message: String) {
+        self.showActivityPopup(title: "Error occurred", message: message)
     }
 }
