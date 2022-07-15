@@ -6,3 +6,38 @@
 //
 
 import Foundation
+import UIKit
+
+class NewPasswordRouter: NewPasswordRouterProtocol {
+    func updateCollectionView() {
+        
+    }
+    
+    weak var viewController: UIViewController?
+    
+    static func createModule() -> UIViewController {
+        let view = NewPasswordViewController(nibName: nil, bundle: nil)
+        let interactor = NewPasswordInteractor()
+        let router = NewPasswordRouter()
+        let presenter = NewPasswordPresenter(interface: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+
+        return view
+    }
+    
+//    static func createModule() -> UIViewController {
+//        let view = NewPasswordViewController(nibName: nil, bundle: nil)
+//        let interactor = ()
+//        let router = HomeRouter()
+//        let presenter = HomePresenter(interface: view, interactor: interactor, router: router)
+//
+//        view.presenter = presenter
+//        interactor.presenter = presenter
+//        router.viewController = view
+
+//        return view
+//    }
+}
