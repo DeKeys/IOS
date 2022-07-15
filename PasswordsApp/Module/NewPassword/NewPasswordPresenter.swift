@@ -19,6 +19,18 @@ class NewPasswordPresenter: NewPasswordPresenterProtocol {
     }
     
     func addPassword(serviceName: String, login: String, password: String) {
+        if serviceName.trimmingCharacters(in: .whitespaces).isEmpty {
+            view?.errorService(message: "Service name is empty")
+            return
+        }
+        if login.trimmingCharacters(in: .whitespaces).isEmpty {
+            view?.errorService(message: "Login is empty")
+            return
+        }
+        if password.trimmingCharacters(in: .whitespaces).isEmpty {
+            view?.errorService(message: "Password is empty")
+            return
+        }
         interactor?.addPassword(serviceName: serviceName, login: login, password: password)
     }
     
