@@ -33,4 +33,17 @@ class NewPasswordInteractor: NewPasswordInteractorInputProtocol {
         }
     }
     
+    func generatePassword() {
+        var password = ""
+        let characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!$%&()*+-/:;<=>?@[]"
+        for _ in 0..<16 {
+            guard let randomChar = characters.randomElement() else {
+                presenter?.errorService(message: "Couldn't create secure password")
+                return
+            }
+            password += String(randomChar)
+        }
+        
+        presenter?.generatedPassword(password: password)
+    }
 }
