@@ -37,8 +37,8 @@ extension HomeRouter: HomeRouterProtocol {
     
     // Show NewPasswordViewController
     func showNewPassword() {
-//        let postVC = PostRouter.createModule()
-//        viewController?.navigationController?.pushViewController(postVC, animated: true)
-        print("Show NewPasswordViewController")
+        let vc = NewPasswordRouter.createModule()
+        let navigationController = UINavigationController(rootViewController: vc)
+        viewController?.present(navigationController, animated: true)
     }
 }

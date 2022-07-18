@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Wireframe
 protocol NewPasswordRouterProtocol: AnyObject {
-    func updateCollectionView()
+   
 }
 
 // MARK: - Presenter

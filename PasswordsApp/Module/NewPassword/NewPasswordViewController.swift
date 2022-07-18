@@ -111,11 +111,10 @@ class NewPasswordViewController: UIViewController {
     
     // MARK: - Selectors
     @objc func createButtonTapped(_ sender: UIBarButtonItem?) {
-        print("Create pwd")
+        presenter?.addPassword(serviceName: self.serviceTextField.text ?? "", login: self.loginTextField.text ?? "", password: self.passwordTextField.text ?? "")
     }
     
     @objc func generateButtonTapped(_ sender: UIButton?) {
-        print("Generate view")
         presenter?.generatePassword()
     }
 
@@ -144,6 +143,10 @@ class NewPasswordViewController: UIViewController {
             make.height.equalTo(self.passwordTextField.snp.height)
             make.left.equalTo(self.passwordTextField.snp.right).offset(8)
         }
+    }
+    
+    func isBeingDismissed() {
+        print(1)
     }
 }
 

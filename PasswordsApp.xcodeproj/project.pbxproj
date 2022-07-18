@@ -298,11 +298,11 @@
 		D25B807F287E44F200F8B1B9 /* NewPassword */ = {
 			isa = PBXGroup;
 			children = (
-				D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */,
-				D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */,
-				D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */,
 				D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */,
 				D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */,
+				D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */,
+				D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */,
+				D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */,
 			);
 			path = NewPassword;
 			sourceTree = "<group>";

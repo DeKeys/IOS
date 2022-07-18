@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let searchModule = HomeRouter.createModule()
         let homeNavigationController = UINavigationController(rootViewController: searchModule)
+        
         window?.rootViewController = homeNavigationController
         window?.makeKeyAndVisible()
     }
