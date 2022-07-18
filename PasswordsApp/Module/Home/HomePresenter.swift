@@ -23,10 +23,6 @@ class HomePresenter: HomePresenterProtocol {
         interactor?.getPasswords()
     }
     
-    func addPassword(serviceName: String, login: String, password: String) {
-        interactor?.addPassword(serviceName: serviceName, login: login, password: password)
-    }
-    
     func pinPassword(password: Password) {
         interactor?.pinPassword(password: password)
         view?.reloadCollectionView()

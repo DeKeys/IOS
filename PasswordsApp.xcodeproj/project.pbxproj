@@ -45,6 +45,13 @@
 		82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3E81F2876414500539C18 /* PasswordViewController.swift */; };
 		82F93480287D5F1400D588E8 /* assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F9347F287D5F1400D588E8 /* assets.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
+		D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */; };
+		D25B8083287E451600F8B1B9 /* NewPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */; };
+		D25B8085287E451F00F8B1B9 /* NewPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */; };
+		D25B8087287E452900F8B1B9 /* NewPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */; };
+		D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */; };
+		D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B808A2880701800F8B1B9 /* EntryTextField.swift */; };
+		D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -92,6 +99,13 @@
 		82F9347F287D5F1400D588E8 /* assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assets.swift; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordPresenter.swift; sourceTree = "<group>"; };
+		D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordInteractor.swift; sourceTree = "<group>"; };
+		D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordProtocols.swift; sourceTree = "<group>"; };
+		D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordRouter.swift; sourceTree = "<group>"; };
+		D25B808A2880701800F8B1B9 /* EntryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTextField.swift; sourceTree = "<group>"; };
+		D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +200,8 @@
 				82948941287370C30036DBFD /* ServiceView.swift */,
 				829489312871FE5D0036DBFD /* Loading */,
 				8273478A287B011700D34207 /* ContextMenu */,
+				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
+				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -203,6 +219,7 @@
 		8294890B2870ADDF0036DBFD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D25B807F287E44F200F8B1B9 /* NewPassword */,
 				8294890C2870AEAC0036DBFD /* Home */,
 			);
 			path = Module;
@@ -276,6 +293,18 @@
 				1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D25B807F287E44F200F8B1B9 /* NewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */,
+				D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */,
+				D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */,
+				D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */,
+				D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */,
+			);
+			path = NewPassword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,19 +442,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25B8083287E451600F8B1B9 /* NewPasswordPresenter.swift in Sources */,
 				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
 				82734792287B01FC00D34207 /* ContextMenuDismissing.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
 				8294893E287210960036DBFD /* NetworkWorker.swift in Sources */,
+				D25B8087287E452900F8B1B9 /* NewPasswordProtocols.swift in Sources */,
 				829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */,
 				D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */,
+				D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */,
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				8273479A287B7B7500D34207 /* ContextMenuProtocols.swift in Sources */,
 				8273478E287B017C00D34207 /* ClippedContainerViewController.swift in Sources */,
+				D25B8085287E451F00F8B1B9 /* NewPasswordInteractor.swift in Sources */,
+				D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */,
+				D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				82734798287B022E00D34207 /* SourceViewCorner.swift in Sources */,
 				82734796287B021C00D34207 /* ContextMenuPresenting.swift in Sources */,
@@ -446,6 +481,7 @@
 				82F93480287D5F1400D588E8 /* assets.swift in Sources */,
 				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
+				D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
 				82734794287B020D00D34207 /* ContextMenuPresentationController.swift in Sources */,
