@@ -91,14 +91,7 @@ class PasswordViewController: UIViewController {
     }
     
     @objc func deletePassword(sender: UIButton) {
-        let alert = UIAlertController(title: "Delete password for \(password.serviceName)?", message: nil, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            self.presenter?.deletePassword(password: self.password)
-        }))
-        
-        self.present(alert, animated: true)
+        self.presenter?.deletePassword(password: self.password)
     }
     
     private func setupCopyButtons() {

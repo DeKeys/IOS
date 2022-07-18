@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Wireframe
 protocol NewPasswordRouterProtocol: AnyObject {
-   
+    func successGoBack(from view: NewPasswordViewProtocol)
 }
 
 // MARK: - Presenter
@@ -36,7 +36,7 @@ protocol NewPasswordInteractorInputProtocol: AnyObject {
 
 // MARK: - View
 protocol NewPasswordViewProtocol: AnyObject {
-    var presenter: NewPasswordPresenterProtocol? { get set}
+    var presenter: NewPasswordPresenterProtocol? { get set }
     
     func close()
     func errorService(message: String)

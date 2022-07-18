@@ -8,6 +8,7 @@
 import Foundation
 
 class NewPasswordPresenter: NewPasswordPresenterProtocol {
+    
     weak private var view: NewPasswordViewProtocol?
     var interactor: NewPasswordInteractorInputProtocol?
     private let router: NewPasswordRouterProtocol?
@@ -46,7 +47,9 @@ extension NewPasswordPresenter: NewPasswordInteractorOutputProtocol {
     }
     
     func success() {
-        view?.close()
+        if let vc = view {
+            router?.successGoBack(from: vc)
+        }
     }
     
     func generatedPassword(password: String) {

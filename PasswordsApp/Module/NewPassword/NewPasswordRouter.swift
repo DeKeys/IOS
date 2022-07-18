@@ -25,4 +25,8 @@ class NewPasswordRouter: NewPasswordRouterProtocol {
         return view
     }
     
+    func successGoBack(from view: NewPasswordViewProtocol) {
+        NotificationCenter.default.post(name: Notification.Name("new password"), object: nil, userInfo: nil)
+        view.close()
+    }
 }

@@ -42,7 +42,7 @@ protocol HomeInteractorInputProtocol: AnyObject {
 
 // MARK: - View
 protocol HomeViewProtocol: AnyObject {
-    var presenter: HomePresenterProtocol?  { get set }
+    var presenter: HomePresenterProtocol? { get set }
 
     func closePasswordVC()
     func setPasswords(passwords: Passwords)

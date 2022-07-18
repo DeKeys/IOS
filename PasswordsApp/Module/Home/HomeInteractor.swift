@@ -19,7 +19,7 @@ class HomeInteractor: HomeInteractorInputProtocol {
             let cachedPasswords = try coreDataWorker.fetchPasswords()
             var pinnedPasswords = Passwords()
             var unpinnedPasswords = Passwords()
-            for pwd in cachedPasswords  {
+            for pwd in cachedPasswords {
                 // Decode password and add it to the result array
                 if let encodedPassword = KeychainWorker.load(key: pwd.ipfsHash!) {
                     var decodedPassword = try decoder.decode(Password.self, from: encodedPassword)
@@ -36,7 +36,9 @@ class HomeInteractor: HomeInteractorInputProtocol {
                     try coreDataWorker.deletePassword(ipfsHash: ipfsHash)
                     let status = KeychainWorker.delete(key: ipfsHash)
                     if status != errSecSuccess {
-                        self.presenter?.errorService(message: "Couldn't delete password with hash \(pwd.ipfsHash!)")
+                        if let hash = pwd.ipfsHash {
+                            self.presenter?.errorService(message: "Couldn't delete password with hash \(hash)")
+                        }
                     }
                 }
             }

@@ -13,7 +13,8 @@ class HomeViewController: UIViewController {
     var presenter: HomePresenterProtocol?
     var passwords: Passwords = [] {
         didSet {
-            collectionView.reloadData()
+            filteredPasswords = passwords
+            self.reloadData()
         }
     }
     var filteredPasswords: Passwords = []
@@ -22,16 +23,36 @@ class HomeViewController: UIViewController {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     let contextMenu = ContextMenu.shared
     let passwordVC = PasswordViewController()
+    
+    private let notificationCenter = NotificationCenter.default
+    private var observationToken: Any?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         makeLayout()
         
-        self.presenter?.getPasswords()
-        filteredPasswords = passwords
+        passwordVC.presenter = presenter
         
-        passwordVC.presenter = self.presenter
+        observationToken = notificationCenter.addObserver(forName: NSNotification.Name("new password"), object: nil, queue: nil) { _ in
+            self.presenter?.getPasswords()
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        presenter?.getPasswords()
+    }
+    
+    private func reloadData() {
+        UIView.transition(with: collectionView, duration: 0.2, options: .transitionCrossDissolve, animations: { () -> Void in
+            self.collectionView.reloadData()
+        }, completion: nil)
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(observationToken!)
     }
 }
 
@@ -119,7 +140,6 @@ extension HomeViewController: HomeViewProtocol {
     
     func reloadCollectionView() {
         self.presenter?.getPasswords()
-        filteredPasswords = passwords
     }
 }
 
@@ -192,7 +212,7 @@ extension HomeViewController: UISearchResultsUpdating {
             }
         }
         
-        self.collectionView.reloadData()
+        self.reloadData()
     }
 }
 

@@ -24,6 +24,7 @@ class NewPasswordInteractor: NewPasswordInteractorInputProtocol {
             let status = KeychainWorker.save(key: ipfsHash, data: encodedPassword)
             if status == errSecSuccess {
                 try coreDataWorker.addPassword(ipfsHash: ipfsHash)
+                NotificationCenter.default.post(name: Notification.Name("new password added"), object: nil, userInfo: nil)
                 presenter?.success()
             } else {
                 self.presenter?.errorService(message: "Couldn't add password to the keychain. Error \(status)")
