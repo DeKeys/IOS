@@ -57,7 +57,7 @@ class PasswordViewController: UIViewController {
         pinButton.addTarget(self, action: #selector(pinPassword), for: .touchUpInside)
         
         // service label
-        serviceLabel.textColor = .textColor
+        serviceLabel.textColor = .white
         serviceLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         
         // delete button
@@ -97,7 +97,7 @@ class PasswordViewController: UIViewController {
     private func setupCopyButtons() {
         // login button
         var loginButtonConfiguration = UIButton.Configuration.gray()
-        loginButtonConfiguration.baseForegroundColor = .textColor
+        loginButtonConfiguration.baseForegroundColor = .white
         loginButtonConfiguration.image = UIImage(systemName: "doc.on.doc")
         loginButtonConfiguration.buttonSize = .medium
         loginButtonConfiguration.imagePlacement = .trailing
@@ -108,7 +108,7 @@ class PasswordViewController: UIViewController {
         
         // password button
         var passwordButtonConfiguration = UIButton.Configuration.gray()
-        passwordButtonConfiguration.baseForegroundColor = .textColor
+        passwordButtonConfiguration.baseForegroundColor = .white
         passwordButtonConfiguration.image = UIImage(systemName: "doc.on.doc")
         passwordButtonConfiguration.buttonSize = .medium
         passwordButtonConfiguration.imagePlacement = .trailing

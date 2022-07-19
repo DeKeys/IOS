@@ -35,7 +35,7 @@ class ClippedContainerViewController: UIViewController {
         view.layer.shadowOpacity = 0.4
         view.layer.shadowOffset = CGSize(width: 4, height: 4)
         view.layer.shadowColor = UIColor.black.cgColor
-        view.backgroundColor = .viewBackground
+        view.backgroundColor = .background
 
         if UIAccessibility.isReduceMotionEnabled == false {
             let amount = 12
@@ -90,6 +90,6 @@ class ClippedContainerViewController: UIViewController {
 extension ClippedContainerViewController: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        viewController.view.backgroundColor = .viewBackground
+        viewController.view.backgroundColor = .background
     }
 }
