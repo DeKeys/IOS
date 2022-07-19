@@ -36,10 +36,10 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         self.layer.cornerRadius = 12
     
         // style labels
-        serviceLabel.font = UIFont.systemFont(ofSize: CGFloat(20), weight: .medium)
+        serviceLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 18)
         serviceLabel.textColor = .white
         
-        loginLabel.font = UIFont.systemFont(ofSize: CGFloat(16), weight: .medium)
+        loginLabel.font = UIFont(font: FontFamily.Poppins.regular, size: 14)
         loginLabel.textColor = .white
         
         // style image

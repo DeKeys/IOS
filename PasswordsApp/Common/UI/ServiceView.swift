@@ -48,7 +48,7 @@ class ServiceView: UIView {
     private func setupView() {
         
         // style letter
-        centeredLabel.font = UIFont.systemFont(ofSize: CGFloat(24), weight: .regular)
+        centeredLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 20)
         centeredLabel.numberOfLines = 0
         centeredLabel.textColor = .white
         
