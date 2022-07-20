@@ -10,11 +10,12 @@ import SnapKit
 
 class AddNewPasswordView: UIView {
     
-    let serviceImage = UIImageView()
-    let serviceLabel = UIImageView()
-    let loginLabel = UIImageView()
+    let serviceImageHolder = UIImageView()
+    let serviceLabelHolder = UIImageView()
+    let loginLabelHolder = UIImageView()
     
     let labelStackView = UIStackView()
+    let tapableCover = UIButton()
     
     let borderLayer = CAShapeLayer()
     
@@ -59,28 +60,28 @@ class AddNewPasswordView: UIView {
         self.layer.masksToBounds = false
         
         // set service image
-//        serviceImage.image = UIImage(named: "Background")
-//        serviceLabel.image = UIImage(named: "Background")
-//        loginLabel.image = UIImage(named: "Background")
-        
-        serviceImage.backgroundColor = .green
-        serviceLabel.backgroundColor = .red
-        loginLabel.backgroundColor = .blue
+        serviceImageHolder.backgroundColor = .green
+        serviceLabelHolder.backgroundColor = .red
+        loginLabelHolder.backgroundColor = .blue
         
         // cretae stack for labes
-        labelStackView.addArrangedSubview(serviceLabel)
-        labelStackView.addArrangedSubview(loginLabel)
+        labelStackView.addArrangedSubview(serviceLabelHolder)
+        labelStackView.addArrangedSubview(loginLabelHolder)
         labelStackView.distribution = .fillProportionally
         labelStackView.axis = .vertical
         labelStackView.spacing = 0
-            
+        
+        // setup tapable button cover
+        
+
         // place all elemetns on the view
-        self.addSubview(serviceImage)
+        self.addSubview(serviceImageHolder)
         self.addSubview(labelStackView)
+        self.addSubview(tapableCover)
     }
     
     private func setupConstraints() {
-        serviceImage.snp.makeConstraints { make in
+        serviceImageHolder.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(40)
             make.centerY.equalTo(self.snp.centerY)
@@ -89,7 +90,14 @@ class AddNewPasswordView: UIView {
 
         labelStackView.snp.makeConstraints { make in
             make.centerY.equalTo(self.snp.centerY)
-            make.left.equalTo(serviceImage.snp.right).offset(20)
+            make.left.equalTo(serviceImageHolder.snp.right).offset(20)
+            make.right.equalTo(self.snp.right).offset(-20)
+            make.height.equalTo(40)
+        }
+        
+        labelStackView.snp.makeConstraints { make in
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(serviceImageHolder.snp.right).offset(20)
             make.right.equalTo(self.snp.right).offset(-20)
             make.height.equalTo(40)
         }

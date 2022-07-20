@@ -107,6 +107,7 @@ extension HomeViewController {
     }
     
     fileprivate func addFooterView() {
+        footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createButtonTapped)))
         self.view.addSubview(footerView)
     }
     
