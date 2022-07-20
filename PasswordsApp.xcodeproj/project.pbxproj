@@ -51,6 +51,10 @@
 		D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */; };
 		D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B808A2880701800F8B1B9 /* EntryTextField.swift */; };
 		D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */; };
+		D2B8A2A228882F6D00FEE0A2 /* PasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A128882F6D00FEE0A2 /* PasswordProtocols.swift */; };
+		D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */; };
+		D2B8A2A628882F8000FEE0A2 /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */; };
+		D2B8A2A828882F8B00FEE0A2 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -104,6 +108,10 @@
 		D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordRouter.swift; sourceTree = "<group>"; };
 		D25B808A2880701800F8B1B9 /* EntryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTextField.swift; sourceTree = "<group>"; };
 		D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		D2B8A2A128882F6D00FEE0A2 /* PasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProtocols.swift; sourceTree = "<group>"; };
+		D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
+		D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
+		D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +223,7 @@
 		8294890B2870ADDF0036DBFD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D2B8A2A028882F3B00FEE0A2 /* Password */,
 				D25B807F287E44F200F8B1B9 /* NewPassword */,
 				8294890C2870AEAC0036DBFD /* Home */,
 			);
@@ -229,8 +238,6 @@
 				829489162871EB700036DBFD /* HomeRouter.swift */,
 				829489142871EB530036DBFD /* HomePresenter.swift */,
 				829489232871FCB10036DBFD /* HomeInteractor.swift */,
-				829489212871ED140036DBFD /* PasswordEntity.swift */,
-				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
 				8294891A2871EBDA0036DBFD /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -294,6 +301,19 @@
 				D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */,
 			);
 			path = NewPassword;
+			sourceTree = "<group>";
+		};
+		D2B8A2A028882F3B00FEE0A2 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				D2B8A2A128882F6D00FEE0A2 /* PasswordProtocols.swift */,
+				D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */,
+				D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */,
+				D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */,
+				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
+				829489212871ED140036DBFD /* PasswordEntity.swift */,
+			);
+			path = Password;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,8 +462,11 @@
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
 				8294893E287210960036DBFD /* NetworkWorker.swift in Sources */,
+				D2B8A2A228882F6D00FEE0A2 /* PasswordProtocols.swift in Sources */,
 				D25B8087287E452900F8B1B9 /* NewPasswordProtocols.swift in Sources */,
 				8277949D288734FD006A0AD2 /* Fonts.swift in Sources */,
+				D2B8A2A628882F8000FEE0A2 /* PasswordInteractor.swift in Sources */,
+				D2B8A2A828882F8B00FEE0A2 /* PasswordPresenter.swift in Sources */,
 				829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */,
 				D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */,
 				D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */,
@@ -471,6 +494,7 @@
 				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
 				D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */,
+				D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
 			);
