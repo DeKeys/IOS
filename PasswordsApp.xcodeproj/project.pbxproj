@@ -55,6 +55,7 @@
 		D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */; };
 		D2B8A2A628882F8000FEE0A2 /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */; };
 		D2B8A2A828882F8B00FEE0A2 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */; };
+		D2B8A2BD2888738000FEE0A2 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2BC2888738000FEE0A2 /* CustomBarButtonItem.swift */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
 		D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
 		D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		D2B8A2BC2888738000FEE0A2 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
 				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
 				824F8864288833E9004C5946 /* AddNewPasswordView.swift */,
+				D2B8A2BC2888738000FEE0A2 /* CustomBarButtonItem.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
 				82948942287370C30036DBFD /* ServiceView.swift in Sources */,
 				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
+				D2B8A2BD2888738000FEE0A2 /* CustomBarButtonItem.swift in Sources */,
 				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
 				D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */,

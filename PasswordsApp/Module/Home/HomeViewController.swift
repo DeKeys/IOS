@@ -10,6 +10,10 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     var presenter: HomePresenterProtocol?
     var passwords: Passwords = [] {
         didSet {
@@ -32,6 +36,8 @@ class HomeViewController: UIViewController {
         
         makeLayout()
         
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
+        
         observationToken = notificationCenter.addObserver(forName: NSNotification.Name("new password"), object: nil, queue: nil) { _ in
             self.presenter?.getPasswords()
         }
@@ -40,6 +46,7 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        setNeedsStatusBarAppearanceUpdate()
         
         presenter?.getPasswords()
     }
@@ -64,26 +71,29 @@ extension HomeViewController {
         
         setupNavigation()
         setupCollectionView()
-        addFooterView()
+//        addFooterView()
         setupConstraints()
     }
     
     fileprivate func setupNavigation() {
         self.title = "Passwords"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let navTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.largeTitleTextAttributes = navTextAttributes
+        let navLargeTitleAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(font: FontFamily.Poppins.bold, size: 34)
+        ]
         
-        let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-        profileButton.image = UIImage(systemName: "gearshape")
-        profileButton.tintColor = .white
+        let navTitleAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(font: FontFamily.Poppins.bold, size: 18)
+        ]
+        navigationController?.navigationBar.largeTitleTextAttributes = navLargeTitleAttributes
+        navigationController?.navigationBar.titleTextAttributes = navTitleAttributes
         
-        let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
-        createButton.image = UIImage(systemName: "plus")
-        createButton.tintColor = .white
-
-        self.navigationItem.leftBarButtonItem = profileButton
-        self.navigationItem.rightBarButtonItem = createButton
+        var createPasswordButton = CustomBarButtonItem(image: UIImage(systemName: "plus")!)
+        createPasswordButton.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createButtonTapped)))
+        
+        navigationItem.rightBarButtonItem = createPasswordButton
         
         setupSearchBar()
     }
@@ -113,17 +123,17 @@ extension HomeViewController {
     }
     
     fileprivate func setupConstraints() {
-        footerView.snp.makeConstraints { make in
-            make.height.equalTo(80)
-            make.left.equalTo(20)
-            make.right.equalTo(-20)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
-        }
+//        footerView.snp.makeConstraints { make in
+//            make.height.equalTo(54)
+//            make.left.equalTo(20)
+//            make.right.equalTo(-20)
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-10)
+//        }
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(footerView.snp.top)
+            make.bottom.leading.trailing.equalToSuperview()
+//            make.bottom.equalTo(footerView.snp.top).offset(-20)
         }
     }
     
