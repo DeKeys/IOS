@@ -47,7 +47,16 @@ extension HomeRouter: HomeRouterProtocol {
         let vc = PasswordRouter.createModule() as? PasswordViewController
         if let vc = vc {
             vc.configureUI(with: password)
-            viewController?.presentPanModal(vc)
+//            viewController?.presentPanModal(vc)
+            if let view = viewController as? HomeViewController {
+                ContextMenu.shared.show(
+                    sourceViewController: view,
+                    viewController: vc,
+                    delegate: view
+                )
+            }
+
+                
         }
         
     }

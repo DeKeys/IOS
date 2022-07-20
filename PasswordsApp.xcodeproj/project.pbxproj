@@ -55,6 +55,13 @@
 		D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */; };
 		D2B8A2A628882F8000FEE0A2 /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */; };
 		D2B8A2A828882F8B00FEE0A2 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */; };
+		D2B8A2B12888371300FEE0A2 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AA2888371300FEE0A2 /* ContextMenu.swift */; };
+		D2B8A2B22888371300FEE0A2 /* ClippedContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AB2888371300FEE0A2 /* ClippedContainerViewController.swift */; };
+		D2B8A2B32888371300FEE0A2 /* ContextMenuDismissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AC2888371300FEE0A2 /* ContextMenuDismissing.swift */; };
+		D2B8A2B42888371300FEE0A2 /* ContextMenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AD2888371300FEE0A2 /* ContextMenuProtocols.swift */; };
+		D2B8A2B52888371300FEE0A2 /* ContextMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AE2888371300FEE0A2 /* ContextMenuPresentationController.swift */; };
+		D2B8A2B62888371300FEE0A2 /* ContextMenuPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AF2888371300FEE0A2 /* ContextMenuPresenting.swift */; };
+		D2B8A2B72888371300FEE0A2 /* SourceViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2B02888371300FEE0A2 /* SourceViewCorner.swift */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -112,6 +119,13 @@
 		D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
 		D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
 		D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		D2B8A2AA2888371300FEE0A2 /* ContextMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
+		D2B8A2AB2888371300FEE0A2 /* ClippedContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClippedContainerViewController.swift; sourceTree = "<group>"; };
+		D2B8A2AC2888371300FEE0A2 /* ContextMenuDismissing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuDismissing.swift; sourceTree = "<group>"; };
+		D2B8A2AD2888371300FEE0A2 /* ContextMenuProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuProtocols.swift; sourceTree = "<group>"; };
+		D2B8A2AE2888371300FEE0A2 /* ContextMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresentationController.swift; sourceTree = "<group>"; };
+		D2B8A2AF2888371300FEE0A2 /* ContextMenuPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenting.swift; sourceTree = "<group>"; };
+		D2B8A2B02888371300FEE0A2 /* SourceViewCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewCorner.swift; sourceTree = "<group>"; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +217,7 @@
 				8294892D2871FE3A0036DBFD /* ReusableView.swift */,
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
+				D2B8A2A92888371300FEE0A2 /* ContextMenu */,
 				829489312871FE5D0036DBFD /* Loading */,
 				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
 				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
@@ -314,6 +329,20 @@
 				829489212871ED140036DBFD /* PasswordEntity.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		D2B8A2A92888371300FEE0A2 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D2B8A2AA2888371300FEE0A2 /* ContextMenu.swift */,
+				D2B8A2AB2888371300FEE0A2 /* ClippedContainerViewController.swift */,
+				D2B8A2AC2888371300FEE0A2 /* ContextMenuDismissing.swift */,
+				D2B8A2AD2888371300FEE0A2 /* ContextMenuProtocols.swift */,
+				D2B8A2AE2888371300FEE0A2 /* ContextMenuPresentationController.swift */,
+				D2B8A2AF2888371300FEE0A2 /* ContextMenuPresenting.swift */,
+				D2B8A2B02888371300FEE0A2 /* SourceViewCorner.swift */,
+			);
+			path = ContextMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,9 +487,11 @@
 			files = (
 				D25B8083287E451600F8B1B9 /* NewPasswordPresenter.swift in Sources */,
 				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
+				D2B8A2B32888371300FEE0A2 /* ContextMenuDismissing.swift in Sources */,
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
+				D2B8A2B72888371300FEE0A2 /* SourceViewCorner.swift in Sources */,
 				8294893E287210960036DBFD /* NetworkWorker.swift in Sources */,
 				D2B8A2A228882F6D00FEE0A2 /* PasswordProtocols.swift in Sources */,
 				D25B8087287E452900F8B1B9 /* NewPasswordProtocols.swift in Sources */,
@@ -472,12 +503,15 @@
 				D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */,
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
+				D2B8A2B12888371300FEE0A2 /* ContextMenu.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				D25B8085287E451F00F8B1B9 /* NewPasswordInteractor.swift in Sources */,
 				D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */,
 				D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,
+				D2B8A2B52888371300FEE0A2 /* ContextMenuPresentationController.swift in Sources */,
+				D2B8A2B22888371300FEE0A2 /* ClippedContainerViewController.swift in Sources */,
 				829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */,
 				829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */,
 				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
@@ -493,9 +527,11 @@
 				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
 				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
+				D2B8A2B42888371300FEE0A2 /* ContextMenuProtocols.swift in Sources */,
 				D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */,
 				D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
+				D2B8A2B62888371300FEE0A2 /* ContextMenuPresenting.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
