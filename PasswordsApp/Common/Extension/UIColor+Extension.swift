@@ -13,6 +13,21 @@ extension UIColor {
     static var background: UIColor {
         return UIColor(patternImage: UIImage.background)
     }
+    
+    static var cellBackground: UIColor {
+        return Asset.cellBackground.color.withAlphaComponent(0.14)
+    }
+}
+
+extension CGColor {
+    
+    static var cellBackground: CGColor {
+        return Asset.cellBackground.color.withAlphaComponent(0.14).cgColor
+    }
+    
+    static var pinBorder: CGColor {
+        return Asset.pinBorder.color.withAlphaComponent(0.8).cgColor
+    }
 }
 
 extension UIImage {

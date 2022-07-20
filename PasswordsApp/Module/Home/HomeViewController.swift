@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     let passwordVC = PasswordViewController()
+    let footerView = AddNewPasswordView()
     
     private let notificationCenter = NotificationCenter.default
     private var observationToken: Any?
@@ -63,6 +64,7 @@ extension HomeViewController {
         
         setupNavigation()
         setupCollectionView()
+        addFooterView()
         setupConstraints()
     }
     
@@ -105,10 +107,23 @@ extension HomeViewController {
         self.view.addSubview(collectionView)
     }
     
+    fileprivate func addFooterView() {
+        footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createButtonTapped)))
+        self.view.addSubview(footerView)
+    }
+    
     fileprivate func setupConstraints() {
+        footerView.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
+        }
+        
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(footerView.snp.top)
         }
     }
     
@@ -171,17 +186,12 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
-    private func calculateCellSize(at indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 20.0, height: 54)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = calculateCellSize(at: indexPath)
-        return CGSize(width: size.width, height: size.height)
+        return CGSize(width: UIScreen.main.bounds.width - 40.0, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

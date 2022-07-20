@@ -34,6 +34,10 @@ class PasswordViewController: UIViewController {
         
         preferredContentSize = CGSize(width: self.view.frame.width - 120, height: 140)
         
+        self.view.layer.cornerRadius = 12
+        self.view.layer.borderWidth = 4
+        self.view.layer.borderColor = UIColor.cellBackground.cgColor
+        
         setupHeader()
         setupCopyButtons()
         setupConstraints()
