@@ -11,7 +11,7 @@ import PanModal
 
 class PasswordViewController: UIViewController {
     
-    var presenter: HomePresenterProtocol?
+    var presenter: PasswordPresenterProtocol?
     var password: Password! {
         didSet {
             serviceLabel.text = password.serviceName
@@ -193,5 +193,11 @@ extension PasswordViewController: PanModalPresentable {
     
     var longFormHeight: PanModalHeight {
         return .contentHeight(200)
+    }
+}
+
+extension PasswordViewController: PasswordViewProtocol {
+    func errorService(message: String) {
+        self.showActivityPopup(title: message)
     }
 }

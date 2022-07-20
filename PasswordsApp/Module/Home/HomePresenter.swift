@@ -23,19 +23,14 @@ class HomePresenter: HomePresenterProtocol {
         interactor?.getPasswords()
     }
     
-    func pinPassword(password: Password) {
-        interactor?.pinPassword(password: password)
-        view?.reloadCollectionView()
-    }
-    
-    func deletePassword(password: Password) {
-        interactor?.deletePassword(password: password)
-        view?.closePasswordVC()
-    }
 }
 
 // MARK: - PostInteractorOutputProtocol
 extension HomePresenter: HomeInteractorOutputProtocol {
+    
+    func showPassword(password: Password) {
+        router.showPassword(password: password)
+    }
     
     func resultPasswords(passwords: Passwords) {
         view?.setPasswords(passwords: passwords)

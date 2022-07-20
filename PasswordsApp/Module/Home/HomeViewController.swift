@@ -31,11 +31,10 @@ class HomeViewController: UIViewController {
         
         makeLayout()
         
-        passwordVC.presenter = presenter
-        
         observationToken = notificationCenter.addObserver(forName: NSNotification.Name("new password"), object: nil, queue: nil) { _ in
             self.presenter?.getPasswords()
         }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -150,13 +149,8 @@ extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentPassword = self.passwords[indexPath.row]
-        passwordVC.configureUI(with: currentPassword)
-        self.presentPanModal(passwordVC)
-//        contextMenu.show(
-//            sourceViewController: self,
-//            viewController: passwordVC,
-//            delegate: self
-//        )
+        
+        presenter?.showPassword(password: currentPassword)
     }
 }
 

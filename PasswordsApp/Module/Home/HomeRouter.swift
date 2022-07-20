@@ -42,4 +42,13 @@ extension HomeRouter: HomeRouterProtocol {
 //        let navigationController = UINavigationController(rootViewController: vc)
 //        viewController?.present(navigationController, animated: true)
     }
+    
+    func showPassword(password: Password) {
+        let vc = PasswordRouter.createModule() as? PasswordViewController
+        if let vc = vc {
+            vc.configureUI(with: password)
+            viewController?.presentPanModal(vc)
+        }
+        
+    }
 }
