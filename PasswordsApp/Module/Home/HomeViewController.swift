@@ -71,8 +71,17 @@ extension HomeViewController {
     fileprivate func setupNavigation() {
         self.title = "Passwords"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let navTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.largeTitleTextAttributes = navTextAttributes
+        let navLargeTitleAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(font: FontFamily.Poppins.bold, size: 34)
+        ]
+        
+        let navTitleAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(font: FontFamily.Poppins.bold, size: 18)
+        ]
+        navigationController?.navigationBar.largeTitleTextAttributes = navLargeTitleAttributes
+        navigationController?.navigationBar.titleTextAttributes = navTitleAttributes
         
         setupSearchBar()
     }
