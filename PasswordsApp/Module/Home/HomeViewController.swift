@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-    let contextMenu = ContextMenu.shared
     let passwordVC = PasswordViewController()
     
     private let notificationCenter = NotificationCenter.default
@@ -32,11 +31,10 @@ class HomeViewController: UIViewController {
         
         makeLayout()
         
-        passwordVC.presenter = presenter
-        
         observationToken = notificationCenter.addObserver(forName: NSNotification.Name("new password"), object: nil, queue: nil) { _ in
             self.presenter?.getPasswords()
         }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +68,9 @@ extension HomeViewController {
     
     fileprivate func setupNavigation() {
         self.title = "Passwords"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let navTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = navTextAttributes
         
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
         profileButton.image = UIImage(systemName: "gearshape")
@@ -148,13 +149,8 @@ extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentPassword = self.passwords[indexPath.row]
-        passwordVC.configureUI(with: currentPassword)
         
-        contextMenu.show(
-            sourceViewController: self,
-            viewController: passwordVC,
-            delegate: self
-        )
+        presenter?.showPassword(password: currentPassword)
     }
 }
 

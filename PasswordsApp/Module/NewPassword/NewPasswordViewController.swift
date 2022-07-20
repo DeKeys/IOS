@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
+import PanModal
 
 class NewPasswordViewController: UIViewController {
     
     var presenter: NewPasswordPresenterProtocol?
+    var titleLabel = UILabel()
     
     var serviceStackView = UIStackView()
     var loginStackView = UIStackView()
@@ -25,13 +27,14 @@ class NewPasswordViewController: UIViewController {
     var loginTextField = EntryTextField()
     var passwordTextField = PasswordTextField()
     
+    var createPasswordButton = UIButton()
+    
     var generatePasswordButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        setupNavigation()
         setupConstraints()
     }
     
@@ -39,10 +42,22 @@ class NewPasswordViewController: UIViewController {
     private func setupUI() {
         self.view.backgroundColor = .background
         
-        // Setup service name stack
-        self.serviceLabel.text = "Service name:"
-        self.serviceLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        let labelFont = UIFont(font: FontFamily.Poppins.bold, size: 16)
         
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 24)
+        titleLabel.text = "Create password"
+        
+        var createPasswordButtonConfig = UIButton.Configuration.plain()
+        createPasswordButtonConfig.title = "Create"
+        
+        createPasswordButton.configuration = createPasswordButtonConfig
+        createPasswordButton.addTarget(self, action: #selector(createButtonTapped), for: .touchDown)
+        
+        // Setup service name stack
+        self.serviceLabel.text = "Service name"
+        self.serviceLabel.font = labelFont
+        self.serviceLabel.textColor = .white
         
         self.serviceTextField.placeholder = "Google"
         
@@ -53,8 +68,10 @@ class NewPasswordViewController: UIViewController {
         self.serviceStackView.addArrangedSubview(self.serviceTextField)
         
         // Setup login stack
-        self.loginLabel.text = "Login:"
-        self.loginLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        self.loginLabel.text = "Login"
+        self.loginLabel.font = labelFont
+        self.loginLabel.textColor = .white
+//        self.loginLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         
         self.loginTextField.placeholder = "test"
         self.loginTextField.textContentType = .username
@@ -77,8 +94,9 @@ class NewPasswordViewController: UIViewController {
         self.generatePasswordButton.addTarget(self, action: #selector(generateButtonTapped), for: .touchDown)
         
         // Setup password stack
-        self.passwordLabel.text = "Password:"
-        self.passwordLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        self.passwordLabel.text = "Password"
+        self.passwordLabel.font = labelFont
+        self.passwordLabel.textColor = .white
         
         self.passwordTextField.placeholder = "qwerty"
         
@@ -94,19 +112,11 @@ class NewPasswordViewController: UIViewController {
         self.passwordStackView.addArrangedSubview(self.passwordLabel)
         self.passwordStackView.addArrangedSubview(self.passwordTextFieldStackView)
         
+        self.view.addSubview(titleLabel)
+        self.view.addSubview(createPasswordButton)
         self.view.addSubview(serviceStackView)
         self.view.addSubview(loginStackView)
         self.view.addSubview(passwordStackView)
-    }
-    
-    private func setupNavigation() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "Create password"
-        
-        let createButton = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createButtonTapped))
-        createButton.tintColor = .white
-        
-        self.navigationItem.rightBarButtonItem = createButton
     }
     
     // MARK: - Selectors
@@ -120,8 +130,19 @@ class NewPasswordViewController: UIViewController {
 
     // MARK: - Constraints
     private func setupConstraints() {
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+            make.left.equalTo(12)
+        }
+        
+        createPasswordButton.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.top)
+            make.right.equalTo(view.snp.right).offset(-12)
+            
+        }
+        
         serviceStackView.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.left.equalTo(12)
             make.right.equalTo(-12)
         }
@@ -162,5 +183,20 @@ extension NewPasswordViewController: NewPasswordViewProtocol {
     
     func errorService(message: String) {
         self.showActivityPopup(title: "Error occurred", message: message)
+    }
+}
+
+
+extension NewPasswordViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(350)
+    }
+    
+    var longFormHeight: PanModalHeight {
+        return .contentHeight(500)
     }
 }
