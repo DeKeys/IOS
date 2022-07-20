@@ -64,7 +64,7 @@ extension HomeViewController {
         
         setupNavigation()
         setupCollectionView()
-        addFooterView()
+//        addFooterView()
         setupConstraints()
     }
     
@@ -111,17 +111,17 @@ extension HomeViewController {
     }
     
     fileprivate func setupConstraints() {
-        footerView.snp.makeConstraints { make in
-            make.height.equalTo(80)
-            make.left.equalTo(20)
-            make.right.equalTo(-20)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
-        }
+//        footerView.snp.makeConstraints { make in
+//            make.height.equalTo(54)
+//            make.left.equalTo(20)
+//            make.right.equalTo(-20)
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-10)
+//        }
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(footerView.snp.top)
+            make.bottom.leading.trailing.equalToSuperview()
+//            make.bottom.equalTo(footerView.snp.top).offset(-20)
         }
     }
     
