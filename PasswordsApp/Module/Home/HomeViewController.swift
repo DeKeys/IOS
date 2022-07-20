@@ -26,7 +26,6 @@ class HomeViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     let passwordVC = PasswordViewController()
-    let footerView = AddNewPasswordView()
     
     private let notificationCenter = NotificationCenter.default
     private var observationToken: Any?
@@ -71,7 +70,6 @@ extension HomeViewController {
         
         setupNavigation()
         setupCollectionView()
-//        addFooterView()
         setupConstraints()
     }
     
@@ -117,23 +115,10 @@ extension HomeViewController {
         self.view.addSubview(collectionView)
     }
     
-    fileprivate func addFooterView() {
-        footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createButtonTapped)))
-        self.view.addSubview(footerView)
-    }
-    
     fileprivate func setupConstraints() {
-//        footerView.snp.makeConstraints { make in
-//            make.height.equalTo(54)
-//            make.left.equalTo(20)
-//            make.right.equalTo(-20)
-//            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-10)
-//        }
-        
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.bottom.leading.trailing.equalToSuperview()
-//            make.bottom.equalTo(footerView.snp.top).offset(-20)
         }
     }
     
