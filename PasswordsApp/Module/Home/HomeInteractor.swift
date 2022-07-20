@@ -49,22 +49,4 @@ class HomeInteractor: HomeInteractorInputProtocol {
             self.presenter?.errorService(message: error.localizedDescription)
         }
     }
-    
-    func pinPassword(password: Password) {
-        coreDataWorker.setPinned(ipfsHash: password.ipfsHash, pinned: !password.pinned)
-    }
-    
-    func deletePassword(password: Password) {
-        // TODO: delete password from server
-        
-        do {
-            try coreDataWorker.deletePassword(ipfsHash: password.ipfsHash)
-            let status = KeychainWorker.delete(key: password.ipfsHash)
-            if status != errSecSuccess {
-                self.presenter?.errorService(message: "Couldn't delete password from keychain. Status code: \(status)")
-            }
-        } catch {
-            self.presenter?.errorService(message: error.localizedDescription)
-        }
-    }
 }

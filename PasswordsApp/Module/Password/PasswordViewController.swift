@@ -7,10 +7,11 @@
 
 import UIKit
 import SnapKit
+import PanModal
 
 class PasswordViewController: UIViewController {
     
-    var presenter: HomePresenterProtocol?
+    var presenter: PasswordPresenterProtocol?
     var password: Password! {
         didSet {
             serviceLabel.text = password.serviceName
@@ -48,6 +49,7 @@ class PasswordViewController: UIViewController {
     }
     
     private func setupHeader() {
+        view.backgroundColor = .background
         
         // pin button
         var pinButtonConfiguration = UIButton.Configuration.plain()
@@ -63,7 +65,7 @@ class PasswordViewController: UIViewController {
         
         // service label
         serviceLabel.textColor = .white
-        serviceLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        serviceLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 24)
         
         // delete button
         var deleteButtonConfiguration = UIButton.Configuration.plain()
@@ -130,7 +132,6 @@ class PasswordViewController: UIViewController {
         secondLevel.alignment = .center
         secondLevel.distribution = .fillEqually
         
-        // add to the view
         self.view.addSubview(secondLevel)
     }
     
@@ -149,9 +150,9 @@ class PasswordViewController: UIViewController {
             make.left.right.equalTo(0)
         }
         
-        // login button
         loginButton.snp.makeConstraints { make in
-            make.width.equalTo(self.view.frame.width - 140)
+            make.left.equalTo(view.snp.left).offset(12)
+            make.right.equalTo(view.snp.right).offset(-12)
         }
         
         loginButton.titleLabel!.snp.makeConstraints { make in
@@ -166,9 +167,9 @@ class PasswordViewController: UIViewController {
             make.centerY.equalTo(loginButton)
         }
         
-        // password button
         passwordButton.snp.makeConstraints { make in
-            make.width.equalTo(self.view.frame.width - 140)
+            make.left.equalTo(view.snp.left).offset(12)
+            make.right.equalTo(view.snp.right).offset(-12)
         }
         
         passwordButton.titleLabel!.snp.makeConstraints { make in
@@ -182,5 +183,25 @@ class PasswordViewController: UIViewController {
             make.right.equalTo(-10)
             make.centerY.equalTo(passwordButton)
         }
+    }
+}
+
+extension PasswordViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(200)
+    }
+    
+    var longFormHeight: PanModalHeight {
+        return .contentHeight(200)
+    }
+}
+
+extension PasswordViewController: PasswordViewProtocol {
+    func errorService(message: String) {
+        self.showActivityPopup(title: message)
     }
 }
