@@ -34,6 +34,8 @@ class NewPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         setupUI()
         setupConstraints()
     }
@@ -186,17 +188,31 @@ extension NewPasswordViewController: NewPasswordViewProtocol {
     }
 }
 
-
+// MARK: - PanModalPresentable
 extension NewPasswordViewController: PanModalPresentable {
     var panScrollable: UIScrollView? {
         return nil
     }
     
-    var shortFormHeight: PanModalHeight {
-        return .contentHeight(350)
-    }
-    
     var longFormHeight: PanModalHeight {
-        return .contentHeight(500)
+        return .maxHeightWithTopInset(0)
+    }
+}
+
+// MARK: - Handle Keyboard Apperance
+extension NewPasswordViewController {
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }
