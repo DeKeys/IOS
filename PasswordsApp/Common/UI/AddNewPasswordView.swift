@@ -10,10 +10,9 @@ import SnapKit
 
 class AddNewPasswordView: UIView {
     
-    let testLabel = UILabel()
-//    let serviceImage = UIImageView()
-//    let serviceLabel = UIImageView()
-//    let loginLabel = UIImageView()
+    let serviceImage = UIImageView()
+    let serviceLabel = UIImageView()
+    let loginLabel = UIImageView()
     
     let labelStackView = UIStackView()
     
@@ -64,36 +63,36 @@ class AddNewPasswordView: UIView {
 //        serviceLabel.image = UIImage(named: "Background")
 //        loginLabel.image = UIImage(named: "Background")
         
-//        serviceImage.backgroundColor = .red
-//        serviceLabel.backgroundColor = .red
-//        serviceImage.backgroundColor = .red
-        
-        testLabel.text = "kjnknnjnknjn"
+        serviceImage.backgroundColor = .green
+        serviceLabel.backgroundColor = .red
+        loginLabel.backgroundColor = .blue
         
         // cretae stack for labes
-//        labelStackView.addArrangedSubview(serviceLabel)
-//        labelStackView.addArrangedSubview(loginLabel)
-//        labelStackView.distribution = .fillProportionally
-//        labelStackView.axis = .vertical
-//        labelStackView.spacing = 0
+        labelStackView.addArrangedSubview(serviceLabel)
+        labelStackView.addArrangedSubview(loginLabel)
+        labelStackView.distribution = .fillProportionally
+        labelStackView.axis = .vertical
+        labelStackView.spacing = 0
             
         // place all elemetns on the view
-        self.addSubview(testLabel)
-//        self.addSubview(labelStackView)
+        self.addSubview(serviceImage)
+        self.addSubview(labelStackView)
     }
     
     private func setupConstraints() {
-        testLabel.snp.makeConstraints { make in
+        serviceImage.snp.makeConstraints { make in
             make.height.equalTo(40)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(self.frame.height)
-            make.left.equalTo(14)
+            make.width.equalTo(40)
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(self.snp.left).offset(12)
         }
-//
-//        labelStackView.snp.makeConstraints { make in
-//            make.centerY.equalTo(self)
-//            make.left.equalTo(serviceImage.snp.right).offset(10)
-//        }
+
+        labelStackView.snp.makeConstraints { make in
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(serviceImage.snp.right).offset(20)
+            make.right.equalTo(self.snp.right).offset(-20)
+            make.height.equalTo(40)
+        }
     }
     
     override class var requiresConstraintBasedLayout: Bool {
