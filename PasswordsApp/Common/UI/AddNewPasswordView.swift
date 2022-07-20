@@ -10,12 +10,7 @@ import SnapKit
 
 class AddNewPasswordView: UIView {
     
-    let serviceImageHolder = UIImageView()
-    let serviceLabelHolder = UIImageView()
-    let loginLabelHolder = UIImageView()
-    
-    let labelStackView = UIStackView()
-    
+    let plusImage = UIImageView()
     let borderLayer = CAShapeLayer()
     
     override init(frame: CGRect) {
@@ -58,36 +53,20 @@ class AddNewPasswordView: UIView {
         self.layer.shadowOpacity = 1.0
         self.layer.masksToBounds = false
         
-        // set service image
-        serviceImageHolder.backgroundColor = .green
-        serviceLabelHolder.backgroundColor = .red
-        loginLabelHolder.backgroundColor = .blue
+        // setup plus image
+        plusImage.image = UIImage(systemName: "plus")
+        plusImage.tintColor = .cellBackground
         
-        // cretae stack for labes
-        labelStackView.addArrangedSubview(serviceLabelHolder)
-        labelStackView.addArrangedSubview(loginLabelHolder)
-        labelStackView.distribution = .fillProportionally
-        labelStackView.axis = .vertical
-        labelStackView.spacing = 0
-
         // place all elemetns on the view
-        self.addSubview(serviceImageHolder)
-        self.addSubview(labelStackView)
+        self.addSubview(plusImage)
     }
     
     private func setupConstraints() {
-        serviceImageHolder.snp.makeConstraints { make in
-            make.height.equalTo(40)
-            make.width.equalTo(40)
+        plusImage.snp.makeConstraints { make in
+            make.height.equalTo(28)
+            make.width.equalTo(28)
             make.centerY.equalTo(self.snp.centerY)
-            make.left.equalTo(self.snp.left).offset(12)
-        }
-
-        labelStackView.snp.makeConstraints { make in
-            make.centerY.equalTo(self.snp.centerY)
-            make.left.equalTo(serviceImageHolder.snp.right).offset(20)
-            make.right.equalTo(self.snp.right).offset(-20)
-            make.height.equalTo(40)
+            make.centerX.equalTo(self.snp.centerX)
         }
     }
     
