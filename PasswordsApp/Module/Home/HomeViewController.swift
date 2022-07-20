@@ -90,10 +90,10 @@ extension HomeViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = navLargeTitleAttributes
         navigationController?.navigationBar.titleTextAttributes = navTitleAttributes
         
-        var createPasswordButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonTapped))
-        createPasswordButton.tintColor = .red
+        var createPasswordButton = CustomBarButtonItem(image: UIImage(systemName: "plus")!)
+        createPasswordButton.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(createButtonTapped)))
         
-        navigationController?.navigationItem.rightBarButtonItem = createPasswordButton
+        navigationItem.rightBarButtonItem = createPasswordButton
         
         setupSearchBar()
     }
