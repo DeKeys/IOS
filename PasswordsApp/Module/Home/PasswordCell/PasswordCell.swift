@@ -15,7 +15,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
     let serviceImage = ServiceView()
     let serviceLabel = UILabel()
     let loginLabel = UILabel()
-    let interactButton = UIButton()
+    let interactionImage = UIImageView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,59 +26,62 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
     func setCell(password: Password) {
         self.password = password
         
-        serviceImage.centeredLetter = String(password.serviceName.first!)
+        serviceImage.serviceName = password.serviceName
         serviceLabel.text = password.serviceName
         loginLabel.text = password.login
+//        interactionImage.image = UIImage(systemName: "key.viewfinder")
+        self.layer.borderColor = password.pinned ? .pinBorder : .cellBackground
     }
 
     fileprivate func makeLayout() {
-        self.layer.cornerRadius = 12
-    
-        // style labels
-        let systemFont = UIFont.systemFont(ofSize: CGFloat(18), weight: .medium)
-        if let descriptor = UIFont.systemFont(ofSize: CGFloat(18), weight: .medium).fontDescriptor.withDesign(.rounded) {
-            let roundedFont = UIFont(descriptor: descriptor, size: CGFloat(18))
-            serviceLabel.font = roundedFont
-            loginLabel.font = roundedFont
-        } else {
-            serviceLabel.font = systemFont
-            loginLabel.font = systemFont
-        }
         
-        // style button
-        interactButton.setTitle("See", for: .normal)
-        interactButton.setTitleColor(.black, for: .normal)
-        interactButton.layer.borderWidth = 0.8
-        interactButton.layer.borderColor = UIColor.black.cgColor
-        interactButton.layer.cornerRadius = 12
+        // style cell
+        self.layer.cornerRadius = 12
+        self.layer.backgroundColor = .cellBackground
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.masksToBounds = false
+        self.layer.borderWidth = 4.0
+
+        // style labels
+        serviceLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 22)
+        serviceLabel.textColor = .white
+        
+        loginLabel.font = UIFont(font: FontFamily.Poppins.regular, size: 16)
+        loginLabel.textColor = .white
+        
+        // style image
+        interactionImage.tintColor = .white
         
         // cretae stack for labes
         let labelStackView = UIStackView(arrangedSubviews: [serviceLabel, loginLabel])
-        labelStackView.distribution = .fillEqually
+        labelStackView.distribution = .fillProportionally
         labelStackView.axis = .vertical
-        labelStackView.spacing = 4
+        labelStackView.spacing = 0
         
         // place all elemetns on the view
         self.addSubview(serviceImage)
         self.addSubview(labelStackView)
-        self.addSubview(interactButton)
+        self.addSubview(interactionImage)
         
         // add some constraints
         serviceImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.width.height.equalTo(self.frame.height - 2)
-            make.left.equalTo(10)
+            make.width.height.equalTo(self.frame.height)
+            make.left.equalTo(14)
         }
         
         labelStackView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.left.equalTo(serviceImage.snp.right).offset(20)
+            make.left.equalTo(serviceImage.snp.right).offset(10)
         }
         
-        interactButton.snp.makeConstraints { make in
+        interactionImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.width.equalTo(60)
-            make.right.equalTo(-10)
+            make.height.width.equalTo(28)
+            make.right.equalTo(-14)
         }
     }
 }

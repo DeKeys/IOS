@@ -22,10 +22,15 @@ class HomePresenter: HomePresenterProtocol {
     func getPasswords() {
         interactor?.getPasswords()
     }
+    
 }
 
 // MARK: - PostInteractorOutputProtocol
 extension HomePresenter: HomeInteractorOutputProtocol {
+    
+    func showPassword(password: Password) {
+        router.showPassword(password: password)
+    }
     
     func resultPasswords(passwords: Passwords) {
         view?.setPasswords(passwords: passwords)

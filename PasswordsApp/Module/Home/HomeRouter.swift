@@ -37,8 +37,15 @@ extension HomeRouter: HomeRouterProtocol {
     
     // Show NewPasswordViewController
     func showNewPassword() {
-//        let postVC = PostRouter.createModule()
-//        viewController?.navigationController?.pushViewController(postVC, animated: true)
-        print("Show NewPasswordViewController")
+        let vc = NewPasswordRouter.createModule()
+        viewController?.presentPanModal(vc)
+    }
+    
+    func showPassword(password: Password) {
+        let vc = PasswordRouter.createModule() as? PasswordViewController
+        if let vc = vc {
+            vc.configureUI(with: password)
+            viewController?.presentPanModal(vc)
+        }
     }
 }

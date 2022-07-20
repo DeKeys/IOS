@@ -11,12 +11,14 @@ import Foundation
 protocol HomeRouterProtocol: AnyObject {
     func showProfile()
     func showNewPassword()
+    func showPassword(password: Password)
 }
 
 // MARK: - Presenter
 protocol HomePresenterProtocol: AnyObject {
     var interactor: HomeInteractorInputProtocol? { get set }
     
+    func showPassword(password: Password)
     func getPasswords()
     func showProfile()
     func showNewPassword()
@@ -31,15 +33,17 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {
-    var presenter: HomeInteractorOutputProtocol?  { get set }
+    var presenter: HomeInteractorOutputProtocol? { get set }
     
     func getPasswords()
 }
 
 // MARK: - View
 protocol HomeViewProtocol: AnyObject {
-    var presenter: HomePresenterProtocol?  { get set }
+    var presenter: HomePresenterProtocol? { get set }
 
+    func closePasswordVC()
     func setPasswords(passwords: Passwords)
     func errorService(message: String)
+    func reloadCollectionView()
 }

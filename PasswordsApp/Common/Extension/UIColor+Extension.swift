@@ -7,42 +7,55 @@
 
 import UIKit
 
-// MARK: - Dark Mode Support
+// MARK: - Custom Background
 extension UIColor {
     
-    static var viewBackground: UIColor {
-        if #available(iOS 13, *) {
-            return UIColor(named: "viewBackground")!
-        }
-        return .white
+    static var background: UIColor {
+        return UIColor(patternImage: UIImage.background)
     }
     
-    static var navBarBackground: UIColor {
-        if #available(iOS 13, *) {
-            return UIColor(named: "navBarBackground")!
-        }
-        return .white
+    static var cellBackground: UIColor {
+        return Asset.cellBackground.color.withAlphaComponent(0.14)
+    }
+}
+
+extension CGColor {
+    
+    static var cellBackground: CGColor {
+        return Asset.cellBackground.color.withAlphaComponent(0.14).cgColor
     }
     
-    var isDarkColor: Bool {
-        var red, green, blue, alpha: CGFloat
-        (red, green, blue, alpha) = (0, 0, 0, 0)
-        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        let lum = 0.2126 * red + 0.7152 * green + 0.0722 * blue
-        return lum < 0.50 ? true : false
+    static var pinBorder: CGColor {
+        return Asset.pinBorder.color.withAlphaComponent(0.8).cgColor
+    }
+}
+
+extension UIImage {
+    
+    static var background: UIImage {
+        return Asset.background.image
     }
 }
 
 // MARK: - Random Color Generation
 extension UIColor {
     
-    // TODO: - Make Gradient Color
-    static var random: UIColor {
-        return UIColor(
-            red: .random(in: 0...1),
-            green: .random(in: 0...1),
-            blue: .random(in: 0...1),
-            alpha: 1.0
-        )
+    static func generateColorFor(text: String) -> UIColor {
+        
+        var hash = 0
+        let colorConstant = 131
+        let maxSafeValue = Int.max / colorConstant
+        
+        for char in text.unicodeScalars {
+            if hash > maxSafeValue {
+                hash /= colorConstant
+            }
+            hash = Int(char.value) + ((hash << 5) - hash)
+        }
+        
+        let finalHash = abs(hash) % (256 * 256 * 256)
+        let color = UIColor(hue: CGFloat(finalHash) / 255.0, saturation: 0.60, brightness: 0.6, alpha: 1.0)
+        
+        return color
     }
 }

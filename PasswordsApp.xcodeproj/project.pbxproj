@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824F8865288833E9004C5946 /* AddNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F8864288833E9004C5946 /* AddNewPasswordView.swift */; };
+		82779494288733F3006A0AD2 /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8277948E288733F3006A0AD2 /* Poppins-Light.otf */; };
+		82779495288733F3006A0AD2 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8277948F288733F3006A0AD2 /* Poppins-Medium.otf */; };
+		82779496288733F3006A0AD2 /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82779490288733F3006A0AD2 /* Poppins-SemiBold.otf */; };
+		82779497288733F3006A0AD2 /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82779491288733F3006A0AD2 /* Poppins-Thin.otf */; };
+		82779498288733F3006A0AD2 /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82779492288733F3006A0AD2 /* Poppins-Bold.otf */; };
+		82779499288733F3006A0AD2 /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82779493288733F3006A0AD2 /* Poppins-Regular.otf */; };
+		8277949B288734F9006A0AD2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8277949A288734F9006A0AD2 /* Assets.swift */; };
+		8277949D288734FD006A0AD2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8277949C288734FD006A0AD2 /* Fonts.swift */; };
 		829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488EB286FB4CF0036DBFD /* AppDelegate.swift */; };
 		829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829488ED286FB4CF0036DBFD /* SceneDelegate.swift */; };
 		829488F5286FB4D10036DBFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 829488F4286FB4D10036DBFD /* Assets.xcassets */; };
@@ -28,15 +37,40 @@
 		829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489322871FE830036DBFD /* LoadingViewPresenter.swift */; };
 		829489352871FE930036DBFD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489342871FE930036DBFD /* LoadingView.swift */; };
 		82948937287201510036DBFD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948936287201510036DBFD /* UIColor+Extension.swift */; };
-		8294893A287201900036DBFD /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82948939287201900036DBFD /* Color.xcassets */; };
 		8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893B287207B00036DBFD /* UIView+Extension.swift */; };
-		8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* PasswordsWorker.swift */; };
+		8294893E287210960036DBFD /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294893D287210960036DBFD /* NetworkWorker.swift */; };
 		82948942287370C30036DBFD /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82948941287370C30036DBFD /* ServiceView.swift */; };
+		8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829489492874603E0036DBFD /* KeychainWorker.swift */; };
+		8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294894B28747B5F0036DBFD /* Data+Extension.swift */; };
+		82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3E81F2876414500539C18 /* PasswordViewController.swift */; };
 		A7D6787667450E07A4214C68 /* Pods_PasswordsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */; };
+		D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */; };
+		D25B8083287E451600F8B1B9 /* NewPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */; };
+		D25B8085287E451F00F8B1B9 /* NewPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */; };
+		D25B8087287E452900F8B1B9 /* NewPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */; };
+		D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */; };
+		D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B808A2880701800F8B1B9 /* EntryTextField.swift */; };
+		D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */; };
+		D2B8A2A228882F6D00FEE0A2 /* PasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A128882F6D00FEE0A2 /* PasswordProtocols.swift */; };
+		D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */; };
+		D2B8A2A628882F8000FEE0A2 /* PasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */; };
+		D2B8A2A828882F8B00FEE0A2 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */; };
+		D2B8A2BD2888738000FEE0A2 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2BC2888738000FEE0A2 /* CustomBarButtonItem.swift */; };
+		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
+		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.release.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.release.xcconfig"; sourceTree = "<group>"; };
+		824F8864288833E9004C5946 /* AddNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPasswordView.swift; sourceTree = "<group>"; };
+		8277948E288733F3006A0AD2 /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
+		8277948F288733F3006A0AD2 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
+		82779490288733F3006A0AD2 /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		82779491288733F3006A0AD2 /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
+		82779492288733F3006A0AD2 /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
+		82779493288733F3006A0AD2 /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
+		8277949A288734F9006A0AD2 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		8277949C288734FD006A0AD2 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		829488E8286FB4CF0036DBFD /* PasswordsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		829488EB286FB4CF0036DBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		829488ED286FB4CF0036DBFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,12 +94,28 @@
 		829489322871FE830036DBFD /* LoadingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewPresenter.swift; sourceTree = "<group>"; };
 		829489342871FE930036DBFD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		82948936287201510036DBFD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		82948939287201900036DBFD /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		8294893B287207B00036DBFD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		8294893D287210960036DBFD /* PasswordsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsWorker.swift; sourceTree = "<group>"; };
+		8294893D287210960036DBFD /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
 		82948941287370C30036DBFD /* ServiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		829489492874603E0036DBFD /* KeychainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWorker.swift; sourceTree = "<group>"; };
+		8294894B28747B5F0036DBFD /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		82F3E81F2876414500539C18 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		9C1B472C1B8290960C616892 /* Pods-PasswordsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.debug.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9E02DE8A2A28D41B9ECC4740 /* Pods_PasswordsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordPresenter.swift; sourceTree = "<group>"; };
+		D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordInteractor.swift; sourceTree = "<group>"; };
+		D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordProtocols.swift; sourceTree = "<group>"; };
+		D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordRouter.swift; sourceTree = "<group>"; };
+		D25B808A2880701800F8B1B9 /* EntryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTextField.swift; sourceTree = "<group>"; };
+		D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		D2B8A2A128882F6D00FEE0A2 /* PasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordProtocols.swift; sourceTree = "<group>"; };
+		D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
+		D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInteractor.swift; sourceTree = "<group>"; };
+		D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		D2B8A2BC2888738000FEE0A2 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
+		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +130,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8277948D288733F3006A0AD2 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8277948E288733F3006A0AD2 /* Poppins-Light.otf */,
+				8277948F288733F3006A0AD2 /* Poppins-Medium.otf */,
+				82779490288733F3006A0AD2 /* Poppins-SemiBold.otf */,
+				82779491288733F3006A0AD2 /* Poppins-Thin.otf */,
+				82779492288733F3006A0AD2 /* Poppins-Bold.otf */,
+				82779493288733F3006A0AD2 /* Poppins-Regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		829488DF286FB4CF0036DBFD = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +193,7 @@
 				8294892B2871FE240036DBFD /* UICollectionView+Extension.swift */,
 				82948936287201510036DBFD /* UIColor+Extension.swift */,
 				8294893B287207B00036DBFD /* UIView+Extension.swift */,
+				8294894B28747B5F0036DBFD /* Data+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -139,8 +203,12 @@
 			children = (
 				8294892D2871FE3A0036DBFD /* ReusableView.swift */,
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
-				829489312871FE5D0036DBFD /* Loading */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
+				829489312871FE5D0036DBFD /* Loading */,
+				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
+				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
+				824F8864288833E9004C5946 /* AddNewPasswordView.swift */,
+				D2B8A2BC2888738000FEE0A2 /* CustomBarButtonItem.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -148,7 +216,9 @@
 		8294890A2870ADC30036DBFD /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				8294893D287210960036DBFD /* PasswordsWorker.swift */,
+				8294893D287210960036DBFD /* NetworkWorker.swift */,
+				829489492874603E0036DBFD /* KeychainWorker.swift */,
+				D2BB24722879EDA300816525 /* CoreDataWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -156,6 +226,8 @@
 		8294890B2870ADDF0036DBFD /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D2B8A2A028882F3B00FEE0A2 /* Password */,
+				D25B807F287E44F200F8B1B9 /* NewPassword */,
 				8294890C2870AEAC0036DBFD /* Home */,
 			);
 			path = Module;
@@ -169,7 +241,6 @@
 				829489162871EB700036DBFD /* HomeRouter.swift */,
 				829489142871EB530036DBFD /* HomePresenter.swift */,
 				829489232871FCB10036DBFD /* HomeInteractor.swift */,
-				829489212871ED140036DBFD /* PasswordEntity.swift */,
 				8294891A2871EBDA0036DBFD /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -196,9 +267,12 @@
 		82948938287201630036DBFD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8277949A288734F9006A0AD2 /* Assets.swift */,
+				8277949C288734FD006A0AD2 /* Fonts.swift */,
+				8277948D288733F3006A0AD2 /* fonts */,
 				829488F6286FB4D10036DBFD /* LaunchScreen.storyboard */,
 				829488F4286FB4D10036DBFD /* Assets.xcassets */,
-				82948939287201900036DBFD /* Color.xcassets */,
+				D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -218,6 +292,31 @@
 				1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D25B807F287E44F200F8B1B9 /* NewPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D25B8086287E452900F8B1B9 /* NewPasswordProtocols.swift */,
+				D25B8088287E49DE00F8B1B9 /* NewPasswordRouter.swift */,
+				D25B8082287E451600F8B1B9 /* NewPasswordPresenter.swift */,
+				D25B8084287E451F00F8B1B9 /* NewPasswordInteractor.swift */,
+				D25B8080287E450800F8B1B9 /* NewPasswordViewController.swift */,
+			);
+			path = NewPassword;
+			sourceTree = "<group>";
+		};
+		D2B8A2A028882F3B00FEE0A2 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				D2B8A2A128882F6D00FEE0A2 /* PasswordProtocols.swift */,
+				D2B8A2A328882F7500FEE0A2 /* PasswordRouter.swift */,
+				D2B8A2A728882F8B00FEE0A2 /* PasswordPresenter.swift */,
+				D2B8A2A528882F8000FEE0A2 /* PasswordInteractor.swift */,
+				82F3E81F2876414500539C18 /* PasswordViewController.swift */,
+				829489212871ED140036DBFD /* PasswordEntity.swift */,
+			);
+			path = Password;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +381,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				829488F8286FB4D10036DBFD /* LaunchScreen.storyboard in Resources */,
-				8294893A287201900036DBFD /* Color.xcassets in Resources */,
 				829488F5286FB4D10036DBFD /* Assets.xcassets in Resources */,
+				82779496288733F3006A0AD2 /* Poppins-SemiBold.otf in Resources */,
+				82779494288733F3006A0AD2 /* Poppins-Light.otf in Resources */,
+				82779497288733F3006A0AD2 /* Poppins-Thin.otf in Resources */,
 				829489202871EC280036DBFD /* PasswordCell.xib in Resources */,
+				82779499288733F3006A0AD2 /* Poppins-Regular.otf in Resources */,
+				82779498288733F3006A0AD2 /* Poppins-Bold.otf in Resources */,
+				82779495288733F3006A0AD2 /* Poppins-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,25 +459,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25B8083287E451600F8B1B9 /* NewPasswordPresenter.swift in Sources */,
 				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
-				8294893E287210960036DBFD /* PasswordsWorker.swift in Sources */,
+				8294893E287210960036DBFD /* NetworkWorker.swift in Sources */,
+				D2B8A2A228882F6D00FEE0A2 /* PasswordProtocols.swift in Sources */,
+				D25B8087287E452900F8B1B9 /* NewPasswordProtocols.swift in Sources */,
+				8277949D288734FD006A0AD2 /* Fonts.swift in Sources */,
+				D2B8A2A628882F8000FEE0A2 /* PasswordInteractor.swift in Sources */,
+				D2B8A2A828882F8B00FEE0A2 /* PasswordPresenter.swift in Sources */,
 				829489192871EB7F0036DBFD /* HomeProtocols.swift in Sources */,
+				D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */,
+				D25B808B2880701800F8B1B9 /* EntryTextField.swift in Sources */,
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
+				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
+				D25B8085287E451F00F8B1B9 /* NewPasswordInteractor.swift in Sources */,
+				D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */,
+				D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */,
+				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
 				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,
 				829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */,
 				829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */,
+				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
+				824F8865288833E9004C5946 /* AddNewPasswordView.swift in Sources */,
 				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
+				8277949B288734F9006A0AD2 /* Assets.swift in Sources */,
+				82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */,
 				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
 				8294892A2871FDF20036DBFD /* UIImageView+Extension.swift in Sources */,
 				829488EE286FB4CF0036DBFD /* SceneDelegate.swift in Sources */,
 				82948942287370C30036DBFD /* ServiceView.swift in Sources */,
 				829489262871FDCC0036DBFD /* UIAlertController+Extension.swift in Sources */,
+				D2B8A2BD2888738000FEE0A2 /* CustomBarButtonItem.swift in Sources */,
+				D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */,
 				829489242871FCB10036DBFD /* HomeInteractor.swift in Sources */,
+				D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */,
+				D2B8A2A428882F7500FEE0A2 /* PasswordRouter.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
 			);
@@ -522,6 +647,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +676,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,6 +712,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */,
+			);
+			currentVersion = D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */;
+			path = PasswordsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 829488E0286FB4CF0036DBFD /* Project object */;
 }

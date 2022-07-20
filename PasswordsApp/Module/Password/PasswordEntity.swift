@@ -14,10 +14,15 @@ struct Password: Codable {
     let serviceName: String
     let login: String
     let password: String
+    let ipfsHash: String
+    let createdAt: Int // as utc timestamp
+    var pinned: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case serviceName = "service"
         case login
         case password
+        case ipfsHash
+        case createdAt
     }
 }
