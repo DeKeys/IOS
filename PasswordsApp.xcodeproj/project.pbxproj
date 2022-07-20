@@ -62,6 +62,7 @@
 		D2B8A2B52888371300FEE0A2 /* ContextMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AE2888371300FEE0A2 /* ContextMenuPresentationController.swift */; };
 		D2B8A2B62888371300FEE0A2 /* ContextMenuPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2AF2888371300FEE0A2 /* ContextMenuPresenting.swift */; };
 		D2B8A2B72888371300FEE0A2 /* SourceViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2B02888371300FEE0A2 /* SourceViewCorner.swift */; };
+		D2B8A2B92888434500FEE0A2 /* CustomNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8A2B82888434500FEE0A2 /* CustomNavigationButton.swift */; };
 		D2BB24732879EDA300816525 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24722879EDA300816525 /* CoreDataWorker.swift */; };
 		D2BB24762879F27400816525 /* PasswordsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BB24742879F27400816525 /* PasswordsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		D2B8A2AE2888371300FEE0A2 /* ContextMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresentationController.swift; sourceTree = "<group>"; };
 		D2B8A2AF2888371300FEE0A2 /* ContextMenuPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenting.swift; sourceTree = "<group>"; };
 		D2B8A2B02888371300FEE0A2 /* SourceViewCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewCorner.swift; sourceTree = "<group>"; };
+		D2B8A2B82888434500FEE0A2 /* CustomNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationButton.swift; sourceTree = "<group>"; };
 		D2BB24722879EDA300816525 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		D2BB24752879F27400816525 /* PasswordsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 				829489312871FE5D0036DBFD /* Loading */,
 				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
 				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
+				D2B8A2B82888434500FEE0A2 /* CustomNavigationButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
 				8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */,
 				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
+				D2B8A2B92888434500FEE0A2 /* CustomNavigationButton.swift in Sources */,
 				8277949B288734F9006A0AD2 /* Assets.swift in Sources */,
 				82F3E8202876414500539C18 /* PasswordViewController.swift in Sources */,
 				8294893C287207B00036DBFD /* UIView+Extension.swift in Sources */,
