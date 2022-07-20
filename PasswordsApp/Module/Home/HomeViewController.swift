@@ -74,17 +74,6 @@ extension HomeViewController {
         let navTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.largeTitleTextAttributes = navTextAttributes
         
-        let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-        profileButton.image = UIImage(systemName: "gearshape")
-        profileButton.tintColor = .white
-        
-        let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
-        createButton.image = UIImage(systemName: "plus")
-        createButton.tintColor = .white
-
-        self.navigationItem.leftBarButtonItem = profileButton
-        self.navigationItem.rightBarButtonItem = createButton
-        
         setupSearchBar()
     }
     
