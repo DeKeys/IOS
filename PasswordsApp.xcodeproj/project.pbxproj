@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478B287B013D00D34207 /* CGRect+Extension.swift */; };
-		8273478E287B017C00D34207 /* ClippedContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478D287B017C00D34207 /* ClippedContainerViewController.swift */; };
-		82734790287B018D00D34207 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478F287B018D00D34207 /* ContextMenu.swift */; };
-		82734792287B01FC00D34207 /* ContextMenuDismissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734791287B01FC00D34207 /* ContextMenuDismissing.swift */; };
-		82734794287B020D00D34207 /* ContextMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734793287B020D00D34207 /* ContextMenuPresentationController.swift */; };
-		82734796287B021C00D34207 /* ContextMenuPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734795287B021C00D34207 /* ContextMenuPresenting.swift */; };
-		82734798287B022E00D34207 /* SourceViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734797287B022E00D34207 /* SourceViewCorner.swift */; };
-		8273479A287B7B7500D34207 /* ContextMenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82734799287B7B7500D34207 /* ContextMenuProtocols.swift */; };
 		82779494288733F3006A0AD2 /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8277948E288733F3006A0AD2 /* Poppins-Light.otf */; };
 		82779495288733F3006A0AD2 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8277948F288733F3006A0AD2 /* Poppins-Medium.otf */; };
 		82779496288733F3006A0AD2 /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82779490288733F3006A0AD2 /* Poppins-SemiBold.otf */; };
@@ -65,13 +58,6 @@
 /* Begin PBXFileReference section */
 		1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.release.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.release.xcconfig"; sourceTree = "<group>"; };
 		8273478B287B013D00D34207 /* CGRect+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
-		8273478D287B017C00D34207 /* ClippedContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedContainerViewController.swift; sourceTree = "<group>"; };
-		8273478F287B018D00D34207 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
-		82734791287B01FC00D34207 /* ContextMenuDismissing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuDismissing.swift; sourceTree = "<group>"; };
-		82734793287B020D00D34207 /* ContextMenuPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuPresentationController.swift; sourceTree = "<group>"; };
-		82734795287B021C00D34207 /* ContextMenuPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenting.swift; sourceTree = "<group>"; };
-		82734797287B022E00D34207 /* SourceViewCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewCorner.swift; sourceTree = "<group>"; };
-		82734799287B7B7500D34207 /* ContextMenuProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuProtocols.swift; sourceTree = "<group>"; };
 		8277948E288733F3006A0AD2 /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
 		8277948F288733F3006A0AD2 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		82779490288733F3006A0AD2 /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
@@ -134,20 +120,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8273478A287B011700D34207 /* ContextMenu */ = {
-			isa = PBXGroup;
-			children = (
-				8273478D287B017C00D34207 /* ClippedContainerViewController.swift */,
-				8273478F287B018D00D34207 /* ContextMenu.swift */,
-				82734799287B7B7500D34207 /* ContextMenuProtocols.swift */,
-				82734791287B01FC00D34207 /* ContextMenuDismissing.swift */,
-				82734793287B020D00D34207 /* ContextMenuPresentationController.swift */,
-				82734795287B021C00D34207 /* ContextMenuPresenting.swift */,
-				82734797287B022E00D34207 /* SourceViewCorner.swift */,
-			);
-			path = ContextMenu;
-			sourceTree = "<group>";
-		};
 		8277948D288733F3006A0AD2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +196,6 @@
 				8294892F2871FE4C0036DBFD /* NibLoadableView.swift */,
 				82948941287370C30036DBFD /* ServiceView.swift */,
 				829489312871FE5D0036DBFD /* Loading */,
-				8273478A287B011700D34207 /* ContextMenu */,
 				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
 				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
 			);
@@ -468,7 +439,6 @@
 				D25B8083287E451600F8B1B9 /* NewPasswordPresenter.swift in Sources */,
 				829489152871EB530036DBFD /* HomePresenter.swift in Sources */,
 				829489282871FDDF0036DBFD /* UIViewController+Extension.swift in Sources */,
-				82734792287B01FC00D34207 /* ContextMenuDismissing.swift in Sources */,
 				8294891E2871EBFE0036DBFD /* PasswordCell.swift in Sources */,
 				82948937287201510036DBFD /* UIColor+Extension.swift in Sources */,
 				8294893E287210960036DBFD /* NetworkWorker.swift in Sources */,
@@ -480,18 +450,13 @@
 				829489352871FE930036DBFD /* LoadingView.swift in Sources */,
 				829489172871EB700036DBFD /* HomeRouter.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
-				8273479A287B7B7500D34207 /* ContextMenuProtocols.swift in Sources */,
-				8273478E287B017C00D34207 /* ClippedContainerViewController.swift in Sources */,
 				D25B8085287E451F00F8B1B9 /* NewPasswordInteractor.swift in Sources */,
 				D25B8089287E49DF00F8B1B9 /* NewPasswordRouter.swift in Sources */,
 				D25B808D2880745D00F8B1B9 /* PasswordTextField.swift in Sources */,
 				8294894A2874603E0036DBFD /* KeychainWorker.swift in Sources */,
-				82734798287B022E00D34207 /* SourceViewCorner.swift in Sources */,
-				82734796287B021C00D34207 /* ContextMenuPresenting.swift in Sources */,
 				8294892E2871FE3A0036DBFD /* ReusableView.swift in Sources */,
 				829489332871FE830036DBFD /* LoadingViewPresenter.swift in Sources */,
 				829489302871FE4C0036DBFD /* NibLoadableView.swift in Sources */,
-				82734790287B018D00D34207 /* ContextMenu.swift in Sources */,
 				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
 				8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */,
@@ -508,7 +473,6 @@
 				D25B8081287E450800F8B1B9 /* NewPasswordViewController.swift in Sources */,
 				8294891B2871EBDA0036DBFD /* HomeViewController.swift in Sources */,
 				829489222871ED140036DBFD /* PasswordEntity.swift in Sources */,
-				82734794287B020D00D34207 /* ContextMenuPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

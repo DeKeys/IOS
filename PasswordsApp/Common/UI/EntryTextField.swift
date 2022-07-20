@@ -34,6 +34,7 @@ class EntryTextField : UITextField {
         self.clipsToBounds = true
         self.font = .systemFont(ofSize: 14)
         self.backgroundColor = .white
+        self.textColor = .darkText
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1.4
         self.layer.borderColor = UIColor.white.cgColor
