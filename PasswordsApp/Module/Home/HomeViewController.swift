@@ -10,6 +10,10 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     var presenter: HomePresenterProtocol?
     var passwords: Passwords = [] {
         didSet {
@@ -32,6 +36,8 @@ class HomeViewController: UIViewController {
         
         makeLayout()
         
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
+        
         observationToken = notificationCenter.addObserver(forName: NSNotification.Name("new password"), object: nil, queue: nil) { _ in
             self.presenter?.getPasswords()
         }
@@ -40,6 +46,7 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        setNeedsStatusBarAppearanceUpdate()
         
         presenter?.getPasswords()
     }
@@ -82,6 +89,11 @@ extension HomeViewController {
         ]
         navigationController?.navigationBar.largeTitleTextAttributes = navLargeTitleAttributes
         navigationController?.navigationBar.titleTextAttributes = navTitleAttributes
+        
+        var createPasswordButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createButtonTapped))
+        createPasswordButton.tintColor = .red
+        
+        navigationController?.navigationItem.rightBarButtonItem = createPasswordButton
         
         setupSearchBar()
     }
