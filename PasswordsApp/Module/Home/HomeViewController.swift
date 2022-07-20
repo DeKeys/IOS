@@ -83,22 +83,6 @@ extension HomeViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = navLargeTitleAttributes
         navigationController?.navigationBar.titleTextAttributes = navTitleAttributes
         
-        let profileButton = CustomNavigationButton(image: UIImage(systemName: "person.crop.circle")!)
-//        let profileButton = UIBarButtonItem(
-//        let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-//        profileButton.image = UIImage(systemName: "gearshape")
-//        profileButton.tintColor = .white
-
-        
-//        profileButton.configuration = profileButtonConfig
-        
-        let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
-        createButton.image = UIImage(systemName: "plus")
-        createButton.tintColor = .white
-
-        self.navigationItem.leftBarButtonItem = profileButton
-        self.navigationItem.rightBarButtonItem = createButton
-        
         setupSearchBar()
     }
     
