@@ -15,7 +15,6 @@ class AddNewPasswordView: UIView {
     let loginLabelHolder = UIImageView()
     
     let labelStackView = UIStackView()
-    let tapableCover = UIButton()
     
     let borderLayer = CAShapeLayer()
     
@@ -70,14 +69,10 @@ class AddNewPasswordView: UIView {
         labelStackView.distribution = .fillProportionally
         labelStackView.axis = .vertical
         labelStackView.spacing = 0
-        
-        // setup tapable button cover
-        
 
         // place all elemetns on the view
         self.addSubview(serviceImageHolder)
         self.addSubview(labelStackView)
-        self.addSubview(tapableCover)
     }
     
     private func setupConstraints() {
@@ -88,13 +83,6 @@ class AddNewPasswordView: UIView {
             make.left.equalTo(self.snp.left).offset(12)
         }
 
-        labelStackView.snp.makeConstraints { make in
-            make.centerY.equalTo(self.snp.centerY)
-            make.left.equalTo(serviceImageHolder.snp.right).offset(20)
-            make.right.equalTo(self.snp.right).offset(-20)
-            make.height.equalTo(40)
-        }
-        
         labelStackView.snp.makeConstraints { make in
             make.centerY.equalTo(self.snp.centerY)
             make.left.equalTo(serviceImageHolder.snp.right).offset(20)

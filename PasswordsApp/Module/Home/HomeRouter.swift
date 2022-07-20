@@ -39,8 +39,6 @@ extension HomeRouter: HomeRouterProtocol {
     func showNewPassword() {
         let vc = NewPasswordRouter.createModule()
         viewController?.presentPanModal(vc)
-//        let navigationController = UINavigationController(rootViewController: vc)
-//        viewController?.present(navigationController, animated: true)
     }
     
     func showPassword(password: Password) {
@@ -48,14 +46,6 @@ extension HomeRouter: HomeRouterProtocol {
         if let vc = vc {
             vc.configureUI(with: password)
             viewController?.presentPanModal(vc)
-//            if let view = viewController as? HomeViewController {
-//                ContextMenu.shared.show(
-//                    sourceViewController: view,
-//                    viewController: vc,
-//                    delegate: view
-//                )
-//            }
         }
-        
     }
 }

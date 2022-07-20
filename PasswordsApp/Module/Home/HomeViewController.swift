@@ -221,13 +221,3 @@ extension HomeViewController: UISearchResultsUpdating {
         self.reloadData()
     }
 }
-
-extension HomeViewController: ContextMenuDelegate {
-    func contextMenuWillDismiss(viewController: UIViewController, animated: Bool) {
-        print("will dismiss")
-    }
-
-    func contextMenuDidDismiss(viewController: UIViewController, animated: Bool) {
-        print("did dismiss")
-    }
-}
