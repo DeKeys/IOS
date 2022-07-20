@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824F8865288833E9004C5946 /* AddNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F8864288833E9004C5946 /* AddNewPasswordView.swift */; };
 		8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8273478B287B013D00D34207 /* CGRect+Extension.swift */; };
 		82779494288733F3006A0AD2 /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8277948E288733F3006A0AD2 /* Poppins-Light.otf */; };
 		82779495288733F3006A0AD2 /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8277948F288733F3006A0AD2 /* Poppins-Medium.otf */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		1E9432440C14C5FDE79E27C2 /* Pods-PasswordsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordsApp.release.xcconfig"; path = "Target Support Files/Pods-PasswordsApp/Pods-PasswordsApp.release.xcconfig"; sourceTree = "<group>"; };
+		824F8864288833E9004C5946 /* AddNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPasswordView.swift; sourceTree = "<group>"; };
 		8273478B287B013D00D34207 /* CGRect+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
 		8277948E288733F3006A0AD2 /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
 		8277948F288733F3006A0AD2 /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				D25B808A2880701800F8B1B9 /* EntryTextField.swift */,
 				D25B808C2880745D00F8B1B9 /* PasswordTextField.swift */,
 				D2B8A2B82888434500FEE0A2 /* CustomNavigationButton.swift */,
+				824F8864288833E9004C5946 /* AddNewPasswordView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				8294894C28747B5F0036DBFD /* Data+Extension.swift in Sources */,
 				829488EC286FB4CF0036DBFD /* AppDelegate.swift in Sources */,
 				8273478C287B013D00D34207 /* CGRect+Extension.swift in Sources */,
+				824F8865288833E9004C5946 /* AddNewPasswordView.swift in Sources */,
 				8294892C2871FE240036DBFD /* UICollectionView+Extension.swift in Sources */,
 				D2B8A2B92888434500FEE0A2 /* CustomNavigationButton.swift in Sources */,
 				8277949B288734F9006A0AD2 /* Assets.swift in Sources */,
