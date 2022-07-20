@@ -37,7 +37,7 @@ class NewPasswordViewController: UIViewController {
     
     // MARK: - UI Setup
     private func setupUI() {
-        self.view.backgroundColor = .viewBackground
+        self.view.backgroundColor = .background
         
         // Setup service name stack
         self.serviceLabel.text = "Service name:"
@@ -104,7 +104,7 @@ class NewPasswordViewController: UIViewController {
         self.title = "Create password"
         
         let createButton = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createButtonTapped))
-        createButton.tintColor = .textColor
+        createButton.tintColor = .white
         
         self.navigationItem.rightBarButtonItem = createButton
     }

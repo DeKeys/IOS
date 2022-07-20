@@ -24,12 +24,12 @@
 ##   - To know which params are supported for a template, use `swiftgen template doc xcassets swift5` to open the template documentation on GitHub.
 xcassets:
   inputs:
-    - PasswordsApp/Resource/Color.xcassets
+    - PasswordsApp/Resource/Assets.xcassets
   outputs:
     - templateName: swift5
       params:
         forceProvidesNamespaces: true
-      output: PasswordsApp/Resource/SwiftGen/assets.swift
+      output: PasswordsApp/Resource/Assets.swift
 
 
 ## Generate constants for your storyboards and XIBs.
@@ -52,6 +52,15 @@ xcassets:
 ##  - `coredata` (for CoreData models)
 ##  - `json`, `yaml` and `plist` (to parse custom JSON/YAML/Plist files and generate code from their content)
 ## …
+
+fonts:
+  inputs: PasswordsApp/Resource/fonts
+  outputs:
+    templateName: swift5
+    params:
+        forceProvidesNamespaces: true
+    output: PasswordsApp/Resource/Fonts.swift
+      
 ##
 ## For more info, use `swiftgen config doc` to open the full documentation on GitHub.
 ## https://github.com/SwiftGen/SwiftGen/tree/6.5.1/Documentation/

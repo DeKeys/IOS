@@ -7,15 +7,18 @@
 
 import UIKit
 
-// MARK: - Dark Mode Support
+// MARK: - Custom Background
 extension UIColor {
     
-    static var viewBackground: UIColor {
-        return Asset.viewBackground.color
+    static var background: UIColor {
+        return UIColor(patternImage: UIImage.background)
     }
+}
+
+extension UIImage {
     
-    static var textColor: UIColor {
-        return Asset.textColor.color
+    static var background: UIImage {
+        return Asset.background.image
     }
 }
 

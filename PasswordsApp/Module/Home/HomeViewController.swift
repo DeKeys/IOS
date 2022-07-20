@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     fileprivate func makeLayout() {
-        self.view.backgroundColor = .viewBackground
+        self.view.backgroundColor = .background
         self.showLoadingDialog()
         
         setupNavigation()
@@ -73,11 +73,11 @@ extension HomeViewController {
         
         let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
         profileButton.image = UIImage(systemName: "gearshape")
-        profileButton.tintColor = .textColor
+        profileButton.tintColor = .white
         
         let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
         createButton.image = UIImage(systemName: "plus")
-        createButton.tintColor = .textColor
+        createButton.tintColor = .white
 
         self.navigationItem.leftBarButtonItem = profileButton
         self.navigationItem.rightBarButtonItem = createButton
@@ -89,7 +89,7 @@ extension HomeViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.definesPresentationContext = true
-        searchController.searchBar.tintColor = .textColor
+        searchController.searchBar.tintColor = .white
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
     }
@@ -98,7 +98,7 @@ extension HomeViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(PasswordCell.self)
-        collectionView.backgroundColor = .viewBackground
+        collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(collectionView)
