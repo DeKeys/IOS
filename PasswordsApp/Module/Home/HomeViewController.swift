@@ -69,12 +69,26 @@ extension HomeViewController {
     fileprivate func setupNavigation() {
         self.title = "Passwords"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let navTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.largeTitleTextAttributes = navTextAttributes
+        let navLargeTitleAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(font: FontFamily.Poppins.bold, size: 34)
+        ]
         
-        let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
-        profileButton.image = UIImage(systemName: "gearshape")
-        profileButton.tintColor = .white
+        let navTitleAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(font: FontFamily.Poppins.bold, size: 18)
+        ]
+        navigationController?.navigationBar.largeTitleTextAttributes = navLargeTitleAttributes
+        navigationController?.navigationBar.titleTextAttributes = navTitleAttributes
+        
+        let profileButton = CustomNavigationButton(image: UIImage(systemName: "person.crop.circle")!)
+//        let profileButton = UIBarButtonItem(
+//        let profileButton = UIBarButtonItem(title: "Profile", style: .done, target: self, action: #selector(profileButtonTapped))
+//        profileButton.image = UIImage(systemName: "gearshape")
+//        profileButton.tintColor = .white
+
+        
+//        profileButton.configuration = profileButtonConfig
         
         let createButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(createButtonTapped))
         createButton.image = UIImage(systemName: "plus")
