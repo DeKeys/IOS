@@ -29,17 +29,27 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         serviceImage.serviceName = password.serviceName
         serviceLabel.text = password.serviceName
         loginLabel.text = password.login
-        interactionImage.image = UIImage(systemName: password.pinned ? "pin.circle" : "key.viewfinder")
+//        interactionImage.image = UIImage(systemName: "key.viewfinder")
+        self.layer.borderColor = password.pinned ? .pinBorder : .cellBackground
     }
 
     fileprivate func makeLayout() {
+        
+        // style cell
         self.layer.cornerRadius = 12
-    
+        self.layer.backgroundColor = .cellBackground
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.masksToBounds = false
+        self.layer.borderWidth = 4.0
+
         // style labels
-        serviceLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 18)
+        serviceLabel.font = UIFont(font: FontFamily.Poppins.bold, size: 22)
         serviceLabel.textColor = .white
         
-        loginLabel.font = UIFont(font: FontFamily.Poppins.regular, size: 14)
+        loginLabel.font = UIFont(font: FontFamily.Poppins.regular, size: 16)
         loginLabel.textColor = .white
         
         // style image
@@ -47,7 +57,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         
         // cretae stack for labes
         let labelStackView = UIStackView(arrangedSubviews: [serviceLabel, loginLabel])
-        labelStackView.distribution = .fillEqually
+        labelStackView.distribution = .fillProportionally
         labelStackView.axis = .vertical
         labelStackView.spacing = 0
         
@@ -59,8 +69,8 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         // add some constraints
         serviceImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
-            make.width.height.equalTo(self.frame.height - 8)
-            make.left.equalTo(10)
+            make.width.height.equalTo(self.frame.height)
+            make.left.equalTo(14)
         }
         
         labelStackView.snp.makeConstraints { make in
@@ -71,7 +81,7 @@ class PasswordCell: UICollectionViewCell, ReusableView, NibLoadableView {
         interactionImage.snp.makeConstraints { make in
             make.centerY.equalTo(self)
             make.height.width.equalTo(28)
-            make.right.equalTo(-10)
+            make.right.equalTo(-14)
         }
     }
 }
